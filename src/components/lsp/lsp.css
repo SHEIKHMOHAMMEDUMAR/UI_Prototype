@@ -1,0 +1,7 @@
+.table{
+    flex: 3;
+    border: 1px solid rgba(74, 74, 74, 0.37);
+    margin: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}

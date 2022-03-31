@@ -1,0 +1,23 @@
+.piechart{
+    flex: 1;
+    border: 1px solid rgba(74, 74, 74, 0.37);
+    margin: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+}
+.data{
+    font-size: 30px;
+}
+.title{
+    font-size: 10px;
+    text-align: left;
+    margin: 10px 10px;
+}
+.pie{
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+}

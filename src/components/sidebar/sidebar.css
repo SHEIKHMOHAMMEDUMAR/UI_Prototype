@@ -1,0 +1,17 @@
+.sidebar{
+    background-color: #0d47a1;
+    max-width: 60px;
+    max-height: 100%;
+    display: block;
+    padding: 4px 4px;
+    text-align: center;
+    align-content: center;
+}
+.icon{
+    font-size: 10px;
+    color: #fff;
+    padding: 10px 15px;
+}
+span{
+    margin: 0px -15px;
+}

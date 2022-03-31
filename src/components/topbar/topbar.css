@@ -1,0 +1,19 @@
+.topbar{
+    display: flex;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+    max-width: 100%;
+    max-height: 50px;
+    background-color: rgb(230, 227, 227);
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 4px;
+}
+.image1{
+    max-width: 60px;
+    max-height: 30px;
+}
+.userName:hover{
+    color: #fff;
+}
