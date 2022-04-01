@@ -1,36 +1,32 @@
+import React, { useState } from "react";
 import "./drop.css"
-import { React, useState } from "react";
-
-export default function Drop({ selected, setselected }) {
-  const [isactive, setisactive] = useState(false);
-  const options = [
-    "Last 7 days",
-    "Last 1 month",
-    "Last 3 months",
-    "Last 6 months",
-    "Last 1 year"
-  ];
-  return (
-    <div className="dropdown">
-      <div className="dropbtn" onClick={(e) => setisactive(!isactive)} >
-       Last 7 days
-        <span className="down"></span>
+const Drop = ({ options, selected, setselected, items }) => {
+  const [open, setopen] = useState(false)
+  const renderedOptions = options.map((option) => {
+    if (option.value === selected.value){
+      return null;
+      }
+    return (
+      <div
+        key={option.value}
+        className="item"
+        onClick={() => setselected(option)}
+      >
+        {option.label}
       </div>
-      {isactive && (
-        <div className="drop-content">
-          {options.map((option) => (
-            <div
-              onClick={(e) => {
-                setselected(option);
-                setisactive(false);
-              }}
-              className="dropdown-item"
-            >
-              {option}
-            </div>
-          ))}
+    );
+  });
+
+  return (
+    <div className="ui form">
+      <div className="field">
+        <div onClick={() => setopen(!open)} className={`ui search dropdown ${open ? 'visible active' : ''}`}>
+          <div className="text">{selected.label}<i className="dropdown icon"></i></div>
+          
+          <div className={`menu ${open ? 'visible transition' : ''}`}>{renderedOptions}</div>
         </div>
-      )}
+      </div>
     </div>
-  )
+  );
 }
+export default Drop;
