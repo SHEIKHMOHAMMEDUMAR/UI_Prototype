@@ -1,4 +1,4 @@
-export const userData = { 
+export const userData1 = { 
   featureInfo : [
     { title: "Total Applications", data: 1.19 },
     { title: "Total Disbursed", data: 350 },
