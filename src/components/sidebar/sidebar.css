@@ -12,6 +12,11 @@
     color: #fff;
     padding: 10px 15px;
 }
+
 span{
     margin: 0px -15px;
+}
+.sticky{
+    position: sticky;
+    flex-grow: 1;
 }
