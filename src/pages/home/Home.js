@@ -11,7 +11,7 @@ import Pyee from "../../components/pyee/Pyee";
 import LSP from "../../components/lsp/LSP";
 
 const Home = () => {
-  const [userData,setData] = useState({userData1})
+  const [userData,setData] = useState(userData1);
   const seldata = (e) => {
         if(e.target.value === "sevenDays"){
             setData(userData1);

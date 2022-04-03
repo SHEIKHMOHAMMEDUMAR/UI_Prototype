@@ -1,11 +1,10 @@
 import "./featureInfo.css"
-import { React, useState } from "react";
+import { React } from "react";
 
 export default function FeatureInfo({items}) {
-    const [item] = useState(items);
     return (
     <div className="featured">
-        {item.map((i)=>(
+        {items.map((i)=>(
             <div className="featuredItem">
                 <span className="featuredMoney">{i.data}</span>
                 <span className="featuredTitle">{i.title}</span>
