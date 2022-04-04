@@ -31,17 +31,9 @@ export default function Chart({ items, dataKey }) {
             <span className="data">{i.data}</span>
             <span className="title">{i.title}</span>
           </div>
-          {selChart({value : i.type, chartData : i.chartData, dataKey : dataKey})};
+          {selChart({value : i.type, chartData : i.chartData, dataKey : dataKey})}
         </div>
       ))}
     </div>
   )
 }
-/*LineChart, Line, if ({i.type} === "Area") {
-            <ResponsiveContainer width="90%" aspect={4/1}>
-              <LineChart data={i.chartData}>
-                <Line type="monotone" dataKey={dataKey} fill="#ff2525" fillOpacity="50%"/>
-              </LineChart>
-            </ResponsiveContainer>  
-          }
-          else{}*/
