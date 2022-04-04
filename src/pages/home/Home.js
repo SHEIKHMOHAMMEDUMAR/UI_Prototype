@@ -31,7 +31,7 @@ const Home = () => {
         }
     }
   useEffect (() => {
-    setTimeout((userData)=> {
+    setTimeout(()=> {
       setLoading(true);
     }, 3000)
 }, [])
