@@ -1,8 +1,9 @@
 import "./chart.css"
 import { BarChart,Line,LineChart, Bar, ResponsiveContainer} from 'recharts';
 import { React } from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
-export default function Chart({ items, dataKey }) {
+export default function Chart({ items, dataKey, isLoading }) {
   const selChart = ({value, chartData, dataKey}) =>{
     if(value === "Bar"){
       return (
@@ -23,7 +24,7 @@ export default function Chart({ items, dataKey }) {
       )
     }
   }
-  return (
+  return isLoading ? (
     <div className="charts">
       {items.map((i)=>(
         <div className="chart">
@@ -32,6 +33,18 @@ export default function Chart({ items, dataKey }) {
             <span className="title">{i.title}</span>
           </div>
           {selChart({value : i.type, chartData : i.chartData, dataKey : dataKey})}
+        </div>
+      ))}
+    </div>
+  ) :
+  (
+    <div className="charts">
+      {items.map((i)=>(
+        <div className="chart">
+          <div className="top">
+            <span className="title">{i.title}</span>
+          </div>
+          <div className="circle"><CircularProgress size={50} /></div>
         </div>
       ))}
     </div>

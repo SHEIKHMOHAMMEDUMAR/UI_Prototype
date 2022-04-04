@@ -1,8 +1,9 @@
 import "./pyee.css"
 import { React, useState } from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend} from 'recharts';
+import { CircularProgress } from "@material-ui/core";
 
-export default function Pyee({items, dataKey}) {
+export default function Pyee({items, dataKey, isLoading}) {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
   const renderActiveShape = (props) => {
     const {cx,cy,innerRadius,outerRadius,startAngle,endAngle,fill} = props;
@@ -24,7 +25,7 @@ export default function Pyee({items, dataKey}) {
     );
   };
   const [activeIndex] = useState(0);
-  return (
+  return isLoading ? (
     <div className="piechart">
       <span className="title">{items.title}</span>
       <ResponsiveContainer width="100%" aspect={1}>
@@ -42,6 +43,16 @@ export default function Pyee({items, dataKey}) {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
           </Pie>
+          <Legend className="legend"/>
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  ) : (
+    <div className="piechart">
+      <div className="title">{items.title}</div>
+      <span className="circlee">{<CircularProgress size={100}/>}</span>
+      <ResponsiveContainer width="100%" aspect={1}>
+        <PieChart className="piee">
           <Legend className="legend"/>
         </PieChart>
       </ResponsiveContainer>

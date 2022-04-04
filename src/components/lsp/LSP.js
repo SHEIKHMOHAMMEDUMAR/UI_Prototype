@@ -1,10 +1,11 @@
 import "./lsp.css"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { React, useState } from "react";
+import { CircularProgress } from "@material-ui/core";
 
-export default function LSP({items}) {
+export default function LSP({items, isLoading}) {
   const [item] = useState(items);
-  return (
+  return isLoading ? (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 200 }} aria-label="simple table">
         <TableHead>
@@ -34,5 +35,23 @@ export default function LSP({items}) {
         </TableBody>
       </Table>
     </TableContainer>
+  ) : (
+    <TableContainer component={Paper} className="table">
+      <Table sx={{ minWidth: 200 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell align="left">LSP</TableCell>
+            <TableCell align="left">Loan Type</TableCell>
+            <TableCell align="right">Amount</TableCell>
+            <TableCell align="left">Date - Time</TableCell>
+            <TableCell align="left">Status</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <span className="load"><CircularProgress size={100}/></span>
+        </TableBody>
+      </Table>
+    </TableContainer>
+
   )
 }

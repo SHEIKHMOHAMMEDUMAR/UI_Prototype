@@ -47,10 +47,10 @@ return(
                     </select>
                 </div>
                 <FeatureInfo items={userData.featureInfo} isLoading={isLoading} />
-                <Chart items={userData.charts} dataKey="Active User"/>
+                <Chart items={userData.charts} isLoading={isLoading} dataKey="Active User"/>
                 <div className="homeWidgets">
-                    <Pyee items={userData.pieChart} dataKey="Active User"/>
-                    <LSP items={userData.Table}/>
+                    <Pyee items={userData.pieChart} isLoading={isLoading} dataKey="Active User"/>
+                    <LSP items={userData.Table} isLoading={isLoading}/>
                 </div>
             </div>
         );
