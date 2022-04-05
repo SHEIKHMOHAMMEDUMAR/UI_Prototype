@@ -14,10 +14,14 @@
     text-align: center;
 }
 .featuredTitle{
-    font-size: 15px;
+    font-size: 20px;
     margin: 10px 10px;
 }
 .featuredMoney{
     font-size: 30px;
     margin: 10px 10px;
+}
+.Title{
+    font-size: 20px;
+    margin-left: 0px;
 }

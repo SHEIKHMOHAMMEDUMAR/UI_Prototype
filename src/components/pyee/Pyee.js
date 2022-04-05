@@ -1,7 +1,7 @@
 import "./pyee.css"
 import { React, useState } from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend} from 'recharts';
-import { CircularProgress } from "@material-ui/core";
+import ContentLoader from "react-content-loader";
 
 export default function Pyee({items, dataKey, isLoading}) {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
@@ -50,7 +50,9 @@ export default function Pyee({items, dataKey, isLoading}) {
   ) : (
     <div className="piechart">
       <div className="title">{items.title}</div>
-      <span className="circlee">{<CircularProgress size={100}/>}</span>
+      <span><ContentLoader  viewBox="0 0 380 700" speed={1.5}>
+            <rect x="40" y="20" rx="2" ry="2" width="360" height="1000" />
+            </ContentLoader></span>
       <ResponsiveContainer width="100%" aspect={1}>
         <PieChart className="piee">
           <Legend className="legend"/>

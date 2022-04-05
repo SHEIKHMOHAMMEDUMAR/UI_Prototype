@@ -1,7 +1,7 @@
 import "./chart.css"
 import { BarChart,Line,LineChart, Bar, ResponsiveContainer} from 'recharts';
 import { React } from "react";
-import CircularProgress from '@mui/material/CircularProgress';
+import ContentLoader from "react-content-loader"
 
 export default function Chart({ items, dataKey, isLoading }) {
   const selChart = ({value, chartData, dataKey}) =>{
@@ -41,10 +41,14 @@ export default function Chart({ items, dataKey, isLoading }) {
     <div className="charts">
       {items.map((i)=>(
         <div className="chart">
-          <div className="top">
-            <span className="title">{i.title}</span>
-          </div>
-          <div className="circle"><CircularProgress size={50} /></div>
+          <div className="circle"> <ContentLoader style={{width: "50%"}} viewBox="0 0 380 200">
+                    <rect x="80" y="37" rx="4" ry="4" width="500" height="13" />
+                    <rect x="80" y="60" rx="4" ry="3" width="500" height="10" />
+                    <rect x="80" y="80" rx="3" ry="3" width="250" height="10" />
+                    <rect x="80" y="100" rx="3" ry="3" width="250" height="10" />
+                    <rect x="80" y="120" rx="3" ry="3" width="250" height="10" />
+                    </ContentLoader>
+                    </div>
         </div>
       ))}
     </div>

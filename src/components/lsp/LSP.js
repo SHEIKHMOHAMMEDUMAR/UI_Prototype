@@ -1,7 +1,7 @@
 import "./lsp.css"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { React, useState } from "react";
-import { CircularProgress } from "@material-ui/core";
+import ContentLoader from "react-content-loader"
 
 export default function LSP({items, isLoading}) {
   const [item] = useState(items);
@@ -48,9 +48,11 @@ export default function LSP({items, isLoading}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          <span className="load"><CircularProgress size={100}/></span>
         </TableBody>
       </Table>
+      <ContentLoader  viewBox="0 0 380 700" speed={1.5}>
+            <rect x="15" y="0" rx="2" ry="2" width="360" height="500" />
+            </ContentLoader>
     </TableContainer>
 
   )
