@@ -13,7 +13,7 @@ import LSP from "../../components/lsp/LSP";
 const Home = () => {
   const [userData,setData] = useState(userData1);
   const [isLoading,setLoading] = useState(false)
-  const seldata = (e) => {
+  const data = (e) => {
         if(e.target.value === "sevenDays"){
             setData(userData1);
         }
@@ -38,7 +38,7 @@ const Home = () => {
 return(
     <div className="home">
         <div className="drop">
-            <select onChange={seldata}> 
+            <select onChange={data}> 
                         <option value="sevenDays">Last 7 days</option> 
                         <option value="oneMonth">Last 1 month</option> 
                         <option value="threeMonths">Last 3 months</option> 
