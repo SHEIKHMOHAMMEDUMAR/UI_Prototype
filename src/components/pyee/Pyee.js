@@ -51,7 +51,7 @@ export default function Pyee({items, dataKey, isLoading}) {
     <div className="piechart">
       <div className="title">{items.title}</div>
       <span><ContentLoader  viewBox="0 0 380 700" speed={1.5}>
-            <rect x="40" y="20" rx="2" ry="2" width="360" height="1000" />
+            <rect x="40" y="30" rx="2" ry="2" width="360" height="1000" />
             </ContentLoader></span>
       <ResponsiveContainer width="100%" aspect={1}>
         <PieChart className="piee">
