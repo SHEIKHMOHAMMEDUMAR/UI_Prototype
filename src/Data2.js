@@ -79,15 +79,15 @@ export const userData2 = {
     }
   ,
     Table : [
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
-      { lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" }
+      { id: 1, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 2, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 3, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 4, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 5, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 6, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 7, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 8, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 9, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" },
+      { id: 10, lsp: "Flipkart", l_type: "Invoice Financing", Amt: "$10,000", DT: "dd/mm/yy - hh:mm:ss", Status: "Approved" }
     ]
   };

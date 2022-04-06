@@ -18,7 +18,7 @@ export default function Chart({ items, dataKey, isLoading }) {
       return (
         <ResponsiveContainer width="90%" aspect={4/1}>
           <AreaChart data={chartData}>
-            <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity="50%"/>
+            <Area type="monotone" dot= {{stroke: {color}, strokeWidth: 2 }} dataKey={dataKey} stroke={color} fill={color} fillOpacity="50%"/>
           </AreaChart>
         </ResponsiveContainer> 
       )

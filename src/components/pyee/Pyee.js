@@ -29,7 +29,7 @@ export default function Pyee({items, dataKey, isLoading}) {
     <div className="piechart">
       <div className="title_p">{items.title}</div>
       <ResponsiveContainer width="100%" aspect={1}>
-        <PieChart className="pie">
+        <PieChart className="pie" width="100%" height="100%">
           <Pie
             activeIndex={activeIndex}
             activeShape={renderActiveShape}
@@ -38,6 +38,7 @@ export default function Pyee({items, dataKey, isLoading}) {
             outerRadius={80}
             fill="#8884d8"
             dataKey={dataKey}
+            legendType="diamond"
             >
               {(items.chartData).map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -55,7 +56,6 @@ export default function Pyee({items, dataKey, isLoading}) {
             </ContentLoader></span>
       <ResponsiveContainer width="100%" aspect={1}>
         <PieChart className="pie">
-        <Legend height={10} width={10} layout="vertical" />
         </PieChart>
       </ResponsiveContainer>
     </div>
