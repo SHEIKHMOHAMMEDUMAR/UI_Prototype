@@ -1,11 +1,18 @@
 .table{
     flex: 3;
-    border: 1px solid rgba(74, 74, 74, 0.37);
+    border: 2px solid rgba(74, 74, 74, 0.37);
     margin: 10px 10px;
-    border-radius: 10px;
     cursor: pointer;
 }
-.load{
-    margin-left: 500px;
-    margin-top: 500px;
+.status{
+    margin: 10px;
+}
+.logo{
+    margin: 10px;
+}
+.Approved{
+    color: green;
+}
+.Declined{
+    color: red;
 }

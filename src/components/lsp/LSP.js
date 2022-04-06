@@ -1,10 +1,18 @@
 import "./lsp.css"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import { React, useState } from "react";
+import React from "react";
 import ContentLoader from "react-content-loader"
+import { Cancel, CheckCircle } from "@mui/icons-material";
 
 export default function LSP({items, isLoading}) {
-  const [item] = useState(items);
+  const logo = ({item}) => {
+    if (item === "Approved"){
+      return <CheckCircle className="Approved"/>
+    }
+    else{
+      return <Cancel className="Declined"/>
+    }
+  }
   return isLoading ? (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -18,18 +26,17 @@ export default function LSP({items, isLoading}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {item.map((i) => (
-            <TableRow
-              key={i.lsp}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
+          {items.map((i) => (
+            <TableRow>
               <TableCell component="th" scope="row">
                 {i.lsp}
               </TableCell>
               <TableCell align="left">{i.l_type}</TableCell>
               <TableCell align="right">{i.Amt}</TableCell>
               <TableCell align="left">{i.DT}</TableCell>
-              <TableCell align="left">{i.Status}</TableCell>
+              <TableCell align="left"><span className="status">{i.Status}</span>
+                                      <span className="logo">{logo({item:i.Status})}</span>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

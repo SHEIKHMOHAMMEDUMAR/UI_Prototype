@@ -1,6 +1,6 @@
 .sidebar{
     background-color: #0d47a1;
-    max-width: 60px;
+    max-width: 70px;
     max-height: 100%;
     display: block;
     padding: 4px 4px;
@@ -13,14 +13,18 @@
     padding: 10px 15px;
     cursor: pointer;
 }
-
+.icon.t{
+    padding-top: 100%;
+    margin-top: 75px;
+}
+.icon.b{
+    padding-bottom: 100%;
+    margin-bottom: 500px;
+}
 span{
     margin: 0px -15px;
 }
 .sticky{
     position: sticky;
     flex-grow: 1;
-}
-.icon .top{
-    cursor: pointer;
 }
