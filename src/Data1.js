@@ -5,7 +5,7 @@ export const userData1 = {
     { title: "Total Rejected", data: 80 }
   ], 
   charts : [
-    { title: "Pending Documentation", data: 15, type: "Bar", color:"#11ffff",
+    { title: "Pending Documentation", data: 15, type: "Bar", color: "#78efff" ,
         chartData: [
           { name: 'Jan', "Active User": 4000},
           { name: 'Feb', "Active User": 3000},
@@ -21,7 +21,7 @@ export const userData1 = {
           { name: 'Dec', "Active User": 9000}
         ]
     }, 
-    { title: "Pending Offer Acceptance", data: 1, type: "Area", color:"#001111",
+    { title: "Pending Offer Acceptance", data: 1, type: "Area", color:"#fc7d5d",
         chartData: [
           { name: 'Jan', "Active User": 4000},
           { name: 'Feb', "Active User": 3000},
@@ -37,7 +37,7 @@ export const userData1 = {
           { name: 'Dec', "Active User": 9000}
         ]
     },
-    { title: "Pending Disbursment", data: 10, type: "Bar", color:"#001111",
+    { title: "Pending Disbursment", data: 10, type: "Bar", color:"#4c75fc",
         chartData: [
           { name: 'Jan', "Active User": 4000},
           { name: 'Feb', "Active User": 3000},
@@ -53,7 +53,7 @@ export const userData1 = {
           { name: 'Dec', "Active User": 9000}
         ]
     },
-    { title: "Failed Transaction", data: 8, type: "Area", color:"#001111",
+    { title: "Failed Transaction", data: 8, type: "Area", color:"#b326ff",
         chartData: [
           { name: 'Jan', "Active User": 4000},
           { name: 'Feb', "Active User": 3000},

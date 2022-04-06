@@ -8,13 +8,12 @@
     max-height: 100%;
     position: relative;
 }
-.data{
+.data_p{
     font-size: 30px;
 }
-.title{
+.title_p{
     font-size: 20px;
-    text-align: left;
-    margin: 10px 10px;
+    margin: 10px;
 }
 .pie{
     max-width: 100%;

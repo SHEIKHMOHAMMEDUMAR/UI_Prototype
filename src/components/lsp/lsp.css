@@ -9,3 +9,15 @@
     margin-left: 500px;
     margin-top: 500px;
 }
+.status{
+    margin: 10px;
+}
+.logo{
+    margin: 10px;
+}
+.Approved{
+    color: green;
+}
+.Declined{
+    color: red;
+}
