@@ -18,7 +18,7 @@ export default function Chart({ items, dataKey, isLoading }) {
       return (
         <ResponsiveContainer width="90%" aspect={4/1}>
           <AreaChart data={chartData}>
-            <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity="50%"/>
+            <Area type="monotone" dot= {{stroke: {color}, strokeWidth: 2 }} dataKey={dataKey} stroke={color} fill={color} fillOpacity="50%"/>
           </AreaChart>
         </ResponsiveContainer> 
       )
@@ -41,9 +41,6 @@ export default function Chart({ items, dataKey, isLoading }) {
     <div className="charts">
       {items.map((i)=>(
         <div className="chart">
-          <div className="top">
-            <span className="title_c">{i.title}</span>
-          </div>
           <div> <ContentLoader style={{width: "50%"}} viewBox="0 0 380 200">
             <rect x="80" y="37" rx="4" ry="4" width="500" height="13" />
             <rect x="80" y="60" rx="4" ry="3" width="500" height="10" />
