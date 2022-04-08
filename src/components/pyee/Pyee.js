@@ -56,10 +56,6 @@ export default function Pyee({items, dataKey, isLoading}) {
             </ContentLoader></span>
       <ResponsiveContainer width="100%" aspect={1}>
         <PieChart className="pie">
-<<<<<<< HEAD
-        <Legend height={10} width={10} layout="vertical" />
-=======
->>>>>>> 99fef0fff384e8a07f8308ca856cb7161e038cba
         </PieChart>
       </ResponsiveContainer>
     </div>

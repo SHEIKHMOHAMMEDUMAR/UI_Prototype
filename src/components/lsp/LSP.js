@@ -1,15 +1,8 @@
 import "./lsp.css"
-<<<<<<< HEAD
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import React from "react";
-import ContentLoader from "react-content-loader"
-import { Cancel, CheckCircle } from "@mui/icons-material";
-=======
 import React from "react";
 import ContentLoader from "react-content-loader"
 import { Cancel, CheckCircle } from "@mui/icons-material";
 import { DataGrid } from "@mui/x-data-grid";
->>>>>>> 99fef0fff384e8a07f8308ca856cb7161e038cba
 
 export default function LSP({items, isLoading}) {
   const logo = ({item}) => {
@@ -19,9 +12,6 @@ export default function LSP({items, isLoading}) {
     else{
       return <Cancel className="Declined"/>
     }
-<<<<<<< HEAD
-  }
-=======
   }  
   const cols = [
   { field: "lsp", headerName: "LSP", width: 100 },
@@ -40,7 +30,6 @@ export default function LSP({items, isLoading}) {
       Status: i.Status,
     };
   });
->>>>>>> 99fef0fff384e8a07f8308ca856cb7161e038cba
   return isLoading ? (
     <div className="table">
       <DataGrid
@@ -60,7 +49,7 @@ export default function LSP({items, isLoading}) {
         checkboxSelection
         disableSelectionOnClick/>
       <span>
-        <ContentLoader  viewBox="0 0 380 700" speed={1.5}>
+        <ContentLoader  viewBox="0 0 380 700" >
           <rect x="15" y="10" rx="2" ry="2" width="360" height="500" />
         </ContentLoader>
       </span>

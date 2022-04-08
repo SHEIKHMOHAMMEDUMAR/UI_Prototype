@@ -5,36 +5,14 @@
 }
 .featuredItem{
     flex: 1;
-<<<<<<< HEAD
-    border: 2px solid rgba(100, 100, 100, 0.37);
-    height: 90px;
-    margin: 15px;
-    margin-top: 20px;
-=======
     border: 1px solid rgba(74, 74, 74, 0.37);
     margin: 10px;
->>>>>>> 99fef0fff384e8a07f8308ca856cb7161e038cba
     padding: 0px;
     border-radius: 10px;
     cursor: pointer;
     display: block;
     text-align: center;
     justify-content: space-between;
-<<<<<<< HEAD
-    box-sizing: border-box;
-}
-.featuredTitle{
-    font-size: 25px;
-    margin: 10px;
-}
-.featuredMoney{
-    font-size: 50px;
-    margin: 10px;
-    margin-top: 30px;
-    position: relative;
-    display: inline-block;
-}
-=======
 }
 .featuredTitle{
     font-size: 15px;
@@ -44,4 +22,3 @@
     font-size: 30px;
     margin: 10px;
 }
->>>>>>> 99fef0fff384e8a07f8308ca856cb7161e038cba
