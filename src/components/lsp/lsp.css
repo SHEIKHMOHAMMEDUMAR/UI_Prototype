@@ -3,6 +3,7 @@
     border: 2px solid rgba(74, 74, 74, 0.37);
     margin: 10px 10px;
     cursor: pointer;
+    height: 600px;
 }
 .status{
     margin: 10px;
