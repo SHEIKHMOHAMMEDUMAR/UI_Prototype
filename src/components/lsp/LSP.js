@@ -5,14 +5,6 @@ import { Cancel, CheckCircle } from "@mui/icons-material";
 import { DataGrid } from "@mui/x-data-grid";
 
 export default function LSP({items, isLoading}) {
-  const logo = ({item}) => {
-    if (item === "Approved"){
-      return <CheckCircle className="Approved"/>
-    }
-    else{
-      return <Cancel className="Declined"/>
-    }
-  }  
   const cols = [
   { field: "lsp", headerName: "LSP", width: 100 },
   { field: "l_type", headerName: "Loan type", width: 200 },
