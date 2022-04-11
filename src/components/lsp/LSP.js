@@ -28,8 +28,8 @@ export default function LSP({items, isLoading}) {
         columns={cols}
         pageSize={10}
         rowsPerPageOptions={[10]}
-        checkboxSelection
-        disableSelectionOnClick/>
+        /*checkboxSelection
+        disableSelectionOnClick*//>
     </div>
   ) : (
     <div className="table">
@@ -37,8 +37,8 @@ export default function LSP({items, isLoading}) {
         columns={cols}
         pageSize={10}
         rowsPerPageOptions={[10]}
-        checkboxSelection
-        disableSelectionOnClick/>
+        /*checkboxSelection
+        disableSelectionOnClick*//>
       <span>
         <ContentLoader  viewBox="0 0 380 700" speed={1.5}>
           <rect x="15" y="10" rx="2" ry="2" width="360" height="500" />
