@@ -22,3 +22,6 @@
     font-size: 30px;
     margin: 10px;
 }
+.featuredItem:hover{
+    background-color: rgb(243, 240, 240);
+}

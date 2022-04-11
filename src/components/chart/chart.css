@@ -23,3 +23,6 @@
     font-size: 15px;
     text-align: right;
 }
+.chart:hover{
+    background-color: rgb(243, 240, 240);
+}
