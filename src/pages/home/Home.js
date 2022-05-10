@@ -10,7 +10,8 @@ import { Transform } from "./Transform";
 export default function Home() {
   const [userData,setData] = useState();
   const api_url = "http://localhost:3000/application";
-  /*const [apiData, setApi] = useState();
+ /* const [apiData, setApi] = useState();
+ 
     const data = (e) => {
     if(e.target.value === "sevenDays"){
       setData(Transform(apiData, e.target.value));
