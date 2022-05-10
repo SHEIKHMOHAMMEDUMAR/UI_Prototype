@@ -1,27 +1,28 @@
 .charts{
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
 }
 .chart{
     flex: 1;
     border: 2px solid rgba(74, 74, 74, 0.37);
-    margin: 15px;
+    margin: 10px 10px;
     border-radius: 10px;
     cursor: pointer;
 }
+.chartt{
+    margin: 0px 10px;
+    text-align: center;
+}
 .top{
-    text-align: left;
-    margin: 10px;
+    margin: 10px 0px;
+    text-align: center;
 }
 .data_c{
-    margin: 10px 10px;
+    margin-right: 20px;
     font-size: 30px;
 }
 .title_c{
-    margin: 10px 10px;
-    font-size: 20px;
-    text-align: right;
+    font-size: 15px;
 }
 .chart:hover{
     background-color: rgb(243, 240, 240);

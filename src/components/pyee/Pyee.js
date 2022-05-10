@@ -4,7 +4,7 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend} from 'rechart
 import ContentLoader from "react-content-loader";
 
 export default function Pyee({items, dataKey, isLoading}) {
-  const COLORS = ['#4857fa', '#ed7b09', '#a30bb8'];
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', "#80FF42", "#28BBFF", "#9FC400", "#FE8800", "#C4009F", "#BBFF28"];
   const renderActiveShape = (props) => {
     const {cx,cy,innerRadius,outerRadius,startAngle,endAngle,fill} = props;
     return (
@@ -29,28 +29,27 @@ export default function Pyee({items, dataKey, isLoading}) {
     <div className="piechart">
       <div className="title_p">{items.title}</div>
       <ResponsiveContainer width="100%" aspect={1}>
-        <PieChart className="pie" width="100%" height="100%">
+        <PieChart className="pie" width="100%" height="100%" >
           <Pie
             activeIndex={activeIndex}
             activeShape={renderActiveShape}
             data={items.chartData}
             innerRadius={60}
             outerRadius={80}
+            cy = {75}
             fill="#8884d8"
             dataKey={dataKey}
-            legendType="diamond"
             >
-              {(items.chartData).map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
+            {items.chartData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
           </Pie>
-          <Legend height={10} width={10} layout="vertical" align="center" />
+          <Legend height={1} width={1} layout="vertical" align="center" verticalAlign="middle" iconType="line" />
         </PieChart>
       </ResponsiveContainer>
     </div>
   ) : (
     <div className="piechart">
-      <div className="title_p">{items.title}</div>
       <span><ContentLoader  viewBox="0 0 380 700" speed={1.5}>
             <rect x="40" y="30" rx="2" ry="2" width="360" height="1000" />
             </ContentLoader></span>

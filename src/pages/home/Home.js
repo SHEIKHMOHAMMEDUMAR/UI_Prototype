@@ -1,44 +1,43 @@
-import { userData1 } from '../../Data1';
-import { userData2 } from '../../Data2';
-import { userData3 } from '../../Data3';
-import { userData4 } from '../../Data4';
-import { userData5 } from '../../Data5';
 import { React, useState, useEffect } from 'react';
+import axios from 'axios';
 import "./home.css"
 import FeatureInfo from "../../components/featureInfo/FeatureInfo";
 import Chart from "../../components/chart/Chart";
 import Pyee from "../../components/pyee/Pyee";
 import LSP from "../../components/lsp/LSP";
+import { Transform } from "./Transform";
 
-const Home = () => {
-  const [userData,setData] = useState(userData1);
-  const [isLoading,setLoading] = useState(false)
+export default function Home() {
+  const [userData,setData] = useState();
+  const [apiData, setApi] = useState();
+  const api_url = "http://localhost:3000/application";
   const data = (e) => {
-        if(e.target.value === "sevenDays"){
-            setData(userData1);
-        }
-        else if(e.target.value === "oneMonth"){
-          setData(userData2);
-        }
-        else if(e.target.value === "threeMonths"){
-          setData(userData3);
-        }
-        else if(e.target.value === "sixMonths"){
-          setData(userData4);
-        }
-        else{
-          setData(userData5);
-        }
+    if(e.target.value === "sevenDays"){
+      setData(Transform(apiData, e.target.value));
     }
-  useEffect (() => {
-    setTimeout(()=> {
-      setLoading(true);
-    }, 3000)
-  }, [])
-  return(
+    else if(e.target.value === "oneMonth"){
+      setData(Transform(apiData, e.target.value));
+    }
+    else if(e.target.value === "threeMonths"){
+      setData(Transform(apiData, e.target.value));
+    }
+    else if(e.target.value === "sixMonths"){
+      setData(Transform(apiData, e.target.value));
+    }
+    else{
+      setData(Transform(apiData, e.target.value));
+    }
+  }
+  useEffect(() => {
+    axios.get(api_url)
+    .then(res => {
+      setApi(res.data);
+    })
+  });
+  return userData === undefined ? (
     <div className="home">
       <div className="drop">
-        <select onChange={data} isLoading={isLoading}> 
+        <select onChange = {data} > 
           <option value="sevenDays">Last 7 days</option> 
           <option value="oneMonth">Last 1 month</option> 
           <option value="threeMonths">Last 3 months</option> 
@@ -46,13 +45,31 @@ const Home = () => {
           <option value="oneYear">Last 1 year</option> 
         </select>
       </div>
-      <FeatureInfo items={userData.featureInfo} isLoading={isLoading} />
-      <Chart items={userData.charts} isLoading={isLoading} dataKey="Active User"/>
+      <FeatureInfo isLoading={false}/>
+      <Chart isLoading={false} dataKey="Active User"/>
       <div className="homeWidgets">
-          <Pyee items={userData.pieChart} isLoading={isLoading} dataKey="Active User"/>
-          <LSP items={userData.Table} isLoading={isLoading}/>
+          <Pyee isLoading={false} dataKey="Active User"/>
+          <LSP isLoading={false} />
+      </div>
+    </div>
+  ) : 
+  (
+    <div className="home">
+      <div className="drop">
+        <select /*onChange = {data}*/ > 
+          <option value="sevenDays">Last 7 days</option> 
+          <option value="oneMonth">Last 1 month</option> 
+          <option value="threeMonths">Last 3 months</option> 
+          <option value="sixMonths">Last 6 months</option>
+          <option value="oneYear">Last 1 year</option> 
+        </select>
+      </div>
+      <FeatureInfo items={userData.featureInfo} isLoading={true}/>
+      <Chart items={userData.charts} isLoading={true} dataKey="Active User"/>
+      <div className="homeWidgets">
+          <Pyee items={userData.pieChart} isLoading={true} dataKey="Active User"/>
+          <LSP items={userData.Table} isLoading={true} />
       </div>
     </div>
   );
 }
-export default Home;

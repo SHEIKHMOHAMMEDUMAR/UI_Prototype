@@ -1,6 +1,6 @@
 .sidebar{
     background-color: #0d47a1;
-    max-width: 70px;
+    max-width: 60px;
     max-height: 100%;
     display: block;
     padding: 4px 4px;
@@ -13,11 +13,13 @@
     padding: 10px 15px;
     cursor: pointer;
 }
-.icon.t{
-    padding-top: 100%;
+.icon.Active, .icon:hover{
+    background-color: #0d3791;
+    border-radius: 10px;
 }
-.icon.b{
-    padding-bottom: 150%;
+.iconContainer{
+    padding-top: 100%;
+    padding-bottom: 100%;
 }
 span{
     margin: 0px -15px;
