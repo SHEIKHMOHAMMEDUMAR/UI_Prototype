@@ -1,4 +1,4 @@
-export const Transform = ({data, cond}) => {
+export const Transform = (data) => {
     var userData = {};
 
     userData.featureInfo = [];

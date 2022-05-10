@@ -9,9 +9,9 @@ import { Transform } from "./Transform";
 
 export default function Home() {
   const [userData,setData] = useState();
-  const [apiData, setApi] = useState();
   const api_url = "http://localhost:3000/application";
-  const data = (e) => {
+  /*const [apiData, setApi] = useState();
+    const data = (e) => {
     if(e.target.value === "sevenDays"){
       setData(Transform(apiData, e.target.value));
     }
@@ -27,17 +27,17 @@ export default function Home() {
     else{
       setData(Transform(apiData, e.target.value));
     }
-  }
+  }*/
   useEffect(() => {
     axios.get(api_url)
     .then(res => {
-      setApi(res.data);
+      setData(Transform(res.data));
     })
   });
   return userData === undefined ? (
     <div className="home">
       <div className="drop">
-        <select onChange = {data} > 
+        <select /*onChange = {data}*/ > 
           <option value="sevenDays">Last 7 days</option> 
           <option value="oneMonth">Last 1 month</option> 
           <option value="threeMonths">Last 3 months</option> 
