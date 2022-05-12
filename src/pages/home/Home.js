@@ -8,6 +8,7 @@ import LSP from "../../components/lsp/LSP";
 import { Transform } from "./Transform";
 
 export default function Home() {
+  const [value, setValue] = useState("");
   const [userData,setData] = useState();
   const api_url = "http://localhost:3000/application";
   /*const [apiData, setApi] = useState();
@@ -33,7 +34,7 @@ export default function Home() {
     .then(res => {
       setData(Transform(res.data));
     })
-  });
+  }, [value]);
   return userData === undefined ? (
     <div className="home">
       <div className="drop">
