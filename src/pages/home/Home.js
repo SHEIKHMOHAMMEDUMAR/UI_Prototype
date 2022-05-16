@@ -6,40 +6,30 @@ import Chart from "../../components/chart/Chart";
 import Pyee from "../../components/pyee/Pyee";
 import LSP from "../../components/lsp/LSP";
 import { Transform } from "./Transform";
+import { ConstructionOutlined } from '@mui/icons-material';
 
 export default function Home() {
-  const [userData,setData] = useState();
+  const [value, setValue] = useState("");
   const api_url = "http://localhost:3000/application";
- /* const [apiData, setApi] = useState();
- 
-    const data = (e) => {
-    if(e.target.value === "sevenDays"){
-      setData(Transform(apiData, e.target.value));
-    }
-    else if(e.target.value === "oneMonth"){
-      setData(Transform(apiData, e.target.value));
-    }
-    else if(e.target.value === "threeMonths"){
-      setData(Transform(apiData, e.target.value));
-    }
-    else if(e.target.value === "sixMonths"){
-      setData(Transform(apiData, e.target.value));
-    }
-    else{
-      setData(Transform(apiData, e.target.value));
-    }
-  }*/
+  const [apiData, setApi] = useState();
+  
+  const [userData,setData] = useState();
+  const data = (e) => {
+    setData(Transform(apiData, e.target.value));  
+  }
+  
   useEffect(() => {
     axios.get(api_url)
     .then(res => {
-      setData(Transform(res.data));
+      setApi(res.data);
     })
-  });
+  }, [value]);
+
   return userData === undefined ? (
     <div className="home">
       <div className="drop">
-        <select /*onChange = {data}*/ > 
-          <option value="sevenDays">Last 7 days</option> 
+        <select onChange = {data} > 
+          <option value="sevenDays">Last 7 days</option>
           <option value="oneMonth">Last 1 month</option> 
           <option value="threeMonths">Last 3 months</option> 
           <option value="sixMonths">Last 6 months</option>
@@ -57,7 +47,7 @@ export default function Home() {
   (
     <div className="home">
       <div className="drop">
-        <select /*onChange = {data}*/ > 
+        <select onChange = {data} >
           <option value="sevenDays">Last 7 days</option> 
           <option value="oneMonth">Last 1 month</option> 
           <option value="threeMonths">Last 3 months</option> 
