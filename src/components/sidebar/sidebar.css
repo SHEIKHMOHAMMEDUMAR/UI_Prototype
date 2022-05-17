@@ -28,3 +28,54 @@ span{
     position: sticky;
     flex-grow: 1;
 }
+.ham{
+    display: none;
+}
+.menu{
+    display: none;
+}
+#toggle{
+    display: none;
+}
+
+@media only screen and (max-width: 750px){
+    .iconContainer{
+    display: none;
+    }
+    .sidebar{
+        background-color: white;
+    }
+    .ham{
+        display: block;
+    }
+    .menu{
+        text-align: center;
+        display: none;
+    }
+    .menu a {
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0 10px;
+    }
+    #toggle:checked + .menu {
+        display: block;
+        margin-top: 10px;
+
+    }
+    .icons{
+        font-size: 10px;
+        color: blue;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    .icons-select{
+        font-size: 10px;
+        color: blue;
+        padding: 10px 15px;
+        cursor: pointer; 
+    }
+    .icons-select, .icons:hover{
+        background-color: aqua;
+        border-radius: 10px;
+    }
+}

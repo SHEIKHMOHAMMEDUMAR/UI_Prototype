@@ -9,7 +9,7 @@ export const Transform = (data, cond) => {
     let lspname = [];
 
 
-    userData.featureInfo[0] = { title : "Total Application" };
+    userData.featureInfo[0] = { title : "Total Applications" };
     userData.featureInfo[1] = { title : "Total Disbursed" };
     userData.featureInfo[2] = { title : "Total Rejected" };
 
@@ -268,7 +268,7 @@ export const Transform = (data, cond) => {
     else if(cond === "oneMonth"){
         for(let i=data.length-1; i>=0; i--){
             if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) <= 1){
+                if((init_month - data[i].transaction.date.slice(5,7)) === 0){
                     seg_data(data[i]);
                 }
             }
@@ -277,7 +277,7 @@ export const Transform = (data, cond) => {
     else if(cond === "threeMonths"){
         for(let i=data.length-1; i>=0; i--){
             if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) <= 3){
+                if((init_month - data[i].transaction.date.slice(5,7)) <= 3)  {
                     seg_data(data[i]);
                 }
             }
@@ -292,7 +292,7 @@ export const Transform = (data, cond) => {
             }
         }
     }
-    else if(cond === "oneyear"){
+    else if(cond === "oneYear"){
         for(let i=data.length-1; i>=0; i--){
             if((init_year - data[i].transaction.date.slice(0,4)) <= 1){
                 seg_data(data[i]);

@@ -18,3 +18,14 @@
 .piechart:hover{
     background-color: rgb(243, 240, 240);
 }
+@media (max-width: 750px){
+    .piechart{
+        border: 1px solid rgba(74, 74, 74, 0.37);
+        height: 700px;
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .title_p{
+        align-items: center;
+    }
+}
