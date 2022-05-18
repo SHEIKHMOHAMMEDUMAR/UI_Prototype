@@ -9,7 +9,6 @@ import { Transform } from "./Transform";
 
 export default function Home() {
   const [value, setValue] = useState();
-  const [options, setOptions] = useState("sevenDays")
   const api_url = "http://localhost:3000/application";
   const [apiData, setApi] = useState();
   
@@ -22,7 +21,7 @@ export default function Home() {
     axios.get(api_url)
     .then(res => {
       setApi(res.data);
-      setData(Transform(apiData,options));
+      setData(Transform(apiData,"sevenDays"));
     })
   }, [value]);
 
