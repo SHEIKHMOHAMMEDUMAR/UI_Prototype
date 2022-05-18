@@ -6,7 +6,6 @@ import Chart from "../../components/chart/Chart";
 import Pyee from "../../components/pyee/Pyee";
 import LSP from "../../components/lsp/LSP";
 import { Transform } from "./Transform";
-import { ConstructionOutlined } from '@mui/icons-material';
 
 export default function Home() {
   const [value, setValue] = useState("");
@@ -22,6 +21,7 @@ export default function Home() {
     axios.get(api_url)
     .then(res => {
       setApi(res.data);
+      setData(Transform(apiData, "sevenDays"));
     })
   }, [value]);
 
