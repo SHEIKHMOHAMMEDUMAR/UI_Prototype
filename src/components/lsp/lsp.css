@@ -1,19 +1,19 @@
 .table{
     flex: 3;
     border: 2px solid rgba(74, 74, 74, 0.37);
-    border-radius: 10px;
-    margin: 10px 10px;
+    border-radius: 0.625rem;
+    margin: 0.625rem 0.625rem;
     cursor: pointer;
-    height: 700px;
+    height: 43.75rem;
 }
 .status{
-    margin: 10px;
+    margin: 0.625rem;
 }
 .status{
-    margin: 10px;
+    margin: 0.625rem;
 }
 .logo{
-    margin: 10px;
+    margin: 0.625rem;
 }
 .Approved{
     color: green;
@@ -21,7 +21,7 @@
 .Declined{
     color: red;
 }
-@media (max-width: 750px){
+@media (max-width: 46.875rem){
     .table{
         display: none;
     }

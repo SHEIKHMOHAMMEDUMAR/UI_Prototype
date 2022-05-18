@@ -1,29 +1,29 @@
 .piechart{
     flex: 1;
-    border: 2px solid rgba(74, 74, 74, 0.37);
-    margin-left: 15px;
-    margin-top: 10px;
-    border-radius: 10px;
+    border: 0.125rem solid rgba(74, 74, 74, 0.37);
+    margin-left: 0.938rem;
+    margin-top: 0.625rem;
+    border-radius: 0.625rem;
     cursor: pointer;
     max-width: 100%;
     max-height: 200%;
 }
 .data_p{
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 .title_p{
-    font-size: 20px;
-    margin: 10px;
+    font-size: 1.25rem;
+    margin: 0.625rem;
 }
 .piechart:hover{
     background-color: rgb(243, 240, 240);
 }
-@media (max-width: 750px){
+@media (max-width: 46.875rem){
     .piechart{
         border: 1px solid rgba(74, 74, 74, 0.37);
-        height: 700px;
-        margin-top: 20px;
-        margin-left: -10px;
+        height: 43.75rem;
+        margin-top: 1.25rem;
+        margin-left: -0.625rem;
     }
     .title_p{
         align-items: center;
