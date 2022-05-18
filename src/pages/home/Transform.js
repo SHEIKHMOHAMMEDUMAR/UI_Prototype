@@ -254,44 +254,74 @@ export const Transform = (data, cond) => {
     const init_day = date.slice(8,10);
     const init_month = date.slice(5,7);
     const init_year = date.slice(0,4);
+    let count = 0;
+
     if(cond === "sevenDays"){
         for(let i=data.length-1; i>=0; i--){
-            if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) === 0){
-                    if((init_day - data[i].transaction.date.slice(8,10)) <= 6){
+            if(init_year - data[i].transaction.date.slice(0,4) === 0){
+                if(init_month - data[i].transaction.date.slice(5,7) === 0){
+                    if(init_day - data[i].transaction.date.slice(8,10) <= 6){
                         seg_data(data[i]);
+                        count += 1;
                     }
                 }
+                else if(init_month - data[i].transaction.date.slice(5,7) === 1 && count < 7){
+                    seg_data(data[i]);
+                    count += 1;
+                }
+            }
+            else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 7){
+                seg_data(data[i]);
+                count += 1;
             }
         }
     }
+
     else if(cond === "oneMonth"){
         for(let i=data.length-1; i>=0; i--){
-            if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) === 0){
+            if(init_year - data[i].transaction.date.slice(0,4) === 0){
+                if(init_month - data[i].transaction.date.slice(5,7) <= 1){
                     seg_data(data[i]);
+                    count += 1;
                 }
+            }
+            else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 30){
+                seg_data(data[i]);
+                count += 1;
             }
         }
     }
+
     else if(cond === "threeMonths"){
         for(let i=data.length-1; i>=0; i--){
-            if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) <= 3)  {
+            if(init_year - data[i].transaction.date.slice(0,4) === 0){
+                if(init_month - data[i].transaction.date.slice(5,7) <= 3){
                     seg_data(data[i]);
+                    count  += 1;
                 }
+            }
+            else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 90){
+                seg_data(data[i]);
+                count += 1;
             }
         }
     }
+
     else if(cond === "sixMonths"){
         for(let i=data.length-1; i>=0; i--){
-            if((init_year - data[i].transaction.date.slice(0,4)) === 0){
-                if((init_month - data[i].transaction.date.slice(5,7)) <= 6){
+            if(init_year - data[i].transaction.date.slice(0,4) === 0){
+                if(init_month - data[i].transaction.date.slice(5,7) <= 6){
                     seg_data(data[i]);
+                    count += 1;
                 }
+            }
+            else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 180){
+                seg_data(data[i]);
+                count += 1;
             }
         }
     }
+
     else if(cond === "oneYear"){
         for(let i=data.length-1; i>=0; i--){
             if((init_year - data[i].transaction.date.slice(0,4)) <= 1){
@@ -299,5 +329,7 @@ export const Transform = (data, cond) => {
             }
         }
     }
+
     return(userData);
+    
 }
