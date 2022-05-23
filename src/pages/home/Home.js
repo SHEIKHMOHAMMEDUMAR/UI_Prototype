@@ -8,11 +8,12 @@ import LSP from "../../components/lsp/LSP";
 import { Transform } from "./Transform";
 
 export default function Home() {
-  const [value, setValue] = useState();
+
   const api_url = "http://localhost:3000/application";
   const [apiData, setApi] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [userData,setData] = useState([]);
+  const [userData, setData] = useState([]);
+  const [err, setError] = useState(false);
 
   const updatedFilterData = (e) => {
     setData(Transform(apiData, e.target.value));  
@@ -20,21 +21,28 @@ export default function Home() {
   
   useEffect(() => {
     axios.get(api_url)
-    .then(res => {
+    .then( res => {
       if(res.status === 200){
+        setError(false);
         setApi(res.data);
         setLoading(false);
-        setData(Transform(apiData,"sevenDays"));
+        setData(Transform(apiData, "sevenDays"));
       }
     })
-  }, [value]);
+    .catch( err => {
+      setError(true);
+    });
+  }, [loading]);
 
-
-  return (
+  return err ? (
+  <div className="error">
+    Unable to connect to the server try after sometime.
+  </div>
+  ) : (
     <>
     <div className="home">
       <div className="drop">
-        <select onChange = {updatedFilterData} > 
+        <select onChange = {updatedFilterData} >
           <option value="sevenDays">Last 7 days</option>
           <option value="oneMonth">Last 1 month</option> 
           <option value="threeMonths">Last 3 months</option> 

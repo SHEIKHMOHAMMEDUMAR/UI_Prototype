@@ -1,10 +1,14 @@
 export const Transform = (data, cond) => {
-
-    var userData = {};
-    if (data === undefined){
-        userData = [];
+    
+    let userData = {};
+    if (data.length === 0){
+        userData.featureInfo = [];
+        userData.charts = [];
+        userData.pieChart = [];
+        userData.Table = [];
         return(userData);
     }
+
     else {
         userData.featureInfo = [];
         userData.charts = [];
@@ -12,7 +16,6 @@ export const Transform = (data, cond) => {
         userData.Table = [];
         let index = 0;
         let lspname = [];
-
 
         userData.featureInfo[0] = { title : "Total Applications" };
         userData.featureInfo[1] = { title : "Total Disbursed" };
