@@ -13,7 +13,7 @@
     padding: 10px 15px;
     cursor: pointer;
 }
-.icon.Active, .icon:hover{
+.icon:active, .icon:hover{
     background-color: #0d3791;
     border-radius: 10px;
 }
@@ -60,7 +60,6 @@ span{
     #toggle:checked + .menu {
         display: block;
         margin-top: 10px;
-
     }
     .icons{
         font-size: 10px;
@@ -68,13 +67,7 @@ span{
         padding: 10px 15px;
         cursor: pointer;
     }
-    .icons-select{
-        font-size: 10px;
-        color: blue;
-        padding: 10px 15px;
-        cursor: pointer; 
-    }
-    .icons-select, .icons:hover{
+    .icons:hover{
         background-color: aqua;
         border-radius: 10px;
     }

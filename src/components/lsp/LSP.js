@@ -34,13 +34,13 @@ export default function LSP({items, isLoading}) {
         };
       });
       return (
-        <div className="table">
-          <DataGrid
-            rows={rows}
-            columns={cols}
-            pageSize={10}
-            rowsPerPageOptions={[10]}/>
-        </div>
+          <div className="table">
+            <DataGrid
+              rows={rows}
+              columns={cols}
+              pageSize={10}
+              rowsPerPageOptions={[10]}/>
+          </div>
       ) 
   }
 }

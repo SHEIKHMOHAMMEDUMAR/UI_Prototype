@@ -6,7 +6,3 @@
   body {
     background: #fcfcfc;
   }
-  .container {
-    display: flex;
-    max-width: 100%;
-  }
