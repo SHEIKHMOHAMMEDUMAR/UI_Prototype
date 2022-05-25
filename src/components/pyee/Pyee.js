@@ -25,7 +25,7 @@ export default function Pyee({items, dataKey, isLoading}) {
     );
   };
   const [activeIndex] = useState(0);
-  return ( isLoading || items === undefined ) ? (
+  return ( isLoading || items === undefined || items.length === 0 ) ? (
     <div className="piechart">
       <span><ContentLoader  viewBox="0 0 380 700" speed={1.5}>
             <rect x="40" y="30" rx="2" ry="2" width="360" height="1000" />

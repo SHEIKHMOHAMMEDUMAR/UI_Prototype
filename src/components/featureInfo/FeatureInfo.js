@@ -3,7 +3,7 @@ import { React} from "react";
 import ContentLoader from "react-content-loader"
 
 export default function FeatureInfo({items, isLoading}) {
-    return ( isLoading || items === undefined ) ? (
+    return ( isLoading || items === undefined || items.length === 0 ) ? (
         <div className="featured">
             <div className="featuredItem">
                 <div className="title">

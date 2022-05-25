@@ -24,7 +24,7 @@ export default function Chart({ items, dataKey, isLoading }) {
       )
     }
   }
-  return ( isLoading || items === undefined ) ? (
+  return ( isLoading || items === undefined || items.length === 0 ) ? (
     <div className="charts">
       <div className="chart">
         <div> <ContentLoader style={{width: "50%"}} viewBox="0 0 380 200">

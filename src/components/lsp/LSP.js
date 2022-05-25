@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader"
 import { DataGrid } from "@mui/x-data-grid";
 
 export default function LSP({items, isLoading}) { 
-  if( isLoading || items === undefined ) {
+  if( isLoading || items === undefined || items.length === 0 ) {
     return (
       <div className="table">
         <span>
@@ -34,13 +34,13 @@ export default function LSP({items, isLoading}) {
         };
       });
       return (
-        <div className="table">
-          <DataGrid
-            rows={rows}
-            columns={cols}
-            pageSize={10}
-            rowsPerPageOptions={[10]}/>
-        </div>
+          <div className="table">
+            <DataGrid
+              rows={rows}
+              columns={cols}
+              pageSize={10}
+              rowsPerPageOptions={[10]}/>
+          </div>
       ) 
   }
 }
