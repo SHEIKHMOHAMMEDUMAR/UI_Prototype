@@ -13,7 +13,7 @@
     padding: 0.625rem 0.938rem;
     cursor: pointer;
 }
-.icon.Active, .icon:hover{
+.icon:active, .icon:hover{
     background-color: #0d3791;
     border-radius: 0.625rem;
 }
@@ -59,8 +59,7 @@ span{
     }
     #toggle:checked + .menu {
         display: block;
-        margin-top: 0.625rem;
-
+        margin-top: 10px;
     }
     .icons{
         font-size: 0.625rem;
@@ -68,13 +67,7 @@ span{
         padding: 0.625rem 0.938rem;
         cursor: pointer;
     }
-    .icons-select{
-        font-size: 0.625rem;
-        color: blue;
-        padding: 0.625rem 0.938rem;
-        cursor: pointer; 
-    }
-    .icons-select, .icons:hover{
+    .icons:hover{
         background-color: aqua;
         border-radius: 0.625rem;
     }

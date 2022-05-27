@@ -6,61 +6,67 @@ import Chart from "../../components/chart/Chart";
 import Pyee from "../../components/pyee/Pyee";
 import LSP from "../../components/lsp/LSP";
 import { Transform } from "./Transform";
+import Topbar from '../../components/topbar/Topbar';
+import Sidebar from '../../components/sidebar/Sidebar';
 
-export default function Home() {
-  const [value, setValue] = useState();
+export default function Home () {
+
   const api_url = "http://localhost:3000/application";
-  const [apiData, setApi] = useState();
-  
-  const [userData,setData] = useState();
-  const data = (e) => {
+  const [apiData, setApi] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [userData, setData] = useState([]);
+  const [errr, setError] = useState(false);
+
+  const updatedFilterData = (e) => {
     setData(Transform(apiData, e.target.value));  
   }
   
   useEffect(() => {
     axios.get(api_url)
-    .then(res => {
-      setApi(res.data);
-      setData(Transform(apiData,"sevenDays"));
+    .then( res => {
+      if(res.status === 200){
+        setError(false);
+        setApi(res.data);
+        setLoading(false);
+        setData(Transform(apiData, "sevenDays"));
+      }
     })
-  }, [value]);
+    .catch( err => {
+      setError(true);
+    });
+  }, [loading]);
 
-  return userData === undefined ? (
-    <div className="home">
-      <div className="drop">
-        <select onChange = {data} > 
-          <option value="sevenDays">Last 7 days</option>
-          <option value="oneMonth">Last 1 month</option> 
-          <option value="threeMonths">Last 3 months</option> 
-          <option value="sixMonths">Last 6 months</option>
-          <option value="oneYear">Last 1 year</option> 
-        </select>
+  return errr ? (
+    <>
+      <div className="error">
+        Unable to connect to the server try after sometime.
       </div>
-      <FeatureInfo isLoading={false}/>
-      <Chart isLoading={false} dataKey="Active User"/>
-      <div className="homeWidgets">
-          <Pyee isLoading={false} dataKey="Active User"/>
-          <LSP isLoading={false} />
-      </div>
-    </div>
-  ) : 
-  (
-    <div className="home">
-      <div className="drop">
-        <select onChange = {data} >
-          <option value="sevenDays">Last 7 days</option> 
-          <option value="oneMonth">Last 1 month</option> 
-          <option value="threeMonths">Last 3 months</option> 
-          <option value="sixMonths">Last 6 months</option>
-          <option value="oneYear">Last 1 year</option> 
-        </select>
-      </div>
-      <FeatureInfo items={userData.featureInfo} isLoading={true}/>
-      <Chart items={userData.charts} isLoading={true} dataKey="Active User"/>
-      <div className="homeWidgets">
-          <Pyee items={userData.pieChart} isLoading={true} dataKey="Active User"/>
-          <LSP items={userData.Table} isLoading={true} />
+    </>
+  ) : (
+    <>
+    <div>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <div className="home">
+          <div className="drop">
+            <select onChange = {updatedFilterData} className="filter">
+              <option value="sevenDays">Last 7 days</option>
+              <option value="oneMonth">Last 1 month</option> 
+              <option value="threeMonths">Last 3 months</option> 
+              <option value="sixMonths">Last 6 months</option>
+              <option value="oneYear">Last 1 year</option> 
+            </select>
+          </div>
+          <FeatureInfo items={userData.featureInfo} isLoading={loading}/>
+          <Chart items={userData.charts} isLoading={loading} dataKey="Active User"/>
+          <div className="homeWidgets">
+            <Pyee items={userData.pieChart} isLoading={loading} dataKey="Active User"/>
+            <LSP items={userData.Table} isLoading={loading} />
+          </div>
+        </div>
       </div>
     </div>
+    </>
   );
 }
