@@ -12,6 +12,7 @@ export default function Transactions ()  {
   const [tloading, setTloading] = useState(true);
   const [userTdata, setTdata] = useState([]);
   const [errt, seterrt] = useState(false);
+  const [errM, seterrM] = useState("");
   
   useEffect(() => {
     axios.get(api_url)
@@ -24,13 +25,20 @@ export default function Transactions ()  {
     })
     .catch( err => {
       seterrt(true);
+      seterrM(err.message);
     });
   }, [tloading]);
   return errt ? (
     <>
-    <div className="error">
-        Unable to connect to the server try after sometime.
-    </div>
+      <div>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+          <div className="error">
+              {errM}
+          </div>
+        </div>
+      </div>
     </>
   ):(
     <>
