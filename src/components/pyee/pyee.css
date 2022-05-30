@@ -1,31 +1,40 @@
-.piechart{
-    flex: 1;
-    border: 0.125rem solid rgba(74, 74, 74, 0.37);
-    margin-left: 0.938rem;
-    margin-top: 0.625rem;
-    border-radius: 0.625rem;
-    cursor: pointer;
-    max-width: 100%;
-    max-height: 100%;
+.piechart {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 0.125rem solid rgba(74, 74, 74, 0.37);
+  margin-left: 0.938rem;
+  margin-top: 0.625rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
 }
-.data_p{
-    font-size: 1.875rem;
+
+.data_p {
+  font-size: 1.875rem;
 }
-.title_p{
-    font-size: 1.25rem;
-    margin: 0.625rem;
+
+.title_p {
+  font-size: 1.25rem;
+  margin: 0.625rem;
 }
-.piechart:hover{
-    background-color: rgb(243, 240, 240);
+
+.piechart:hover {
+  background-color: #f3f0f0;
 }
-@media (max-width: 46.875rem){
-    .piechart{
-        border: 1px solid rgba(74, 74, 74, 0.37);
-        height: 100%;
-        margin-top: 20px;
-        margin-left: -10px;
-    }
-    .title_p{
-        align-items: center;
-    }
+
+@media (max-width: 46.875rem) {
+  .piechart {
+    border: 1px solid rgba(74, 74, 74, 0.37);
+    height: 100%;
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+  .title_p {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
+/*# sourceMappingURL=pyee.css.map */

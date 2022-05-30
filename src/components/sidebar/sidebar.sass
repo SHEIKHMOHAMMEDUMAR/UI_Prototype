@@ -1,0 +1,55 @@
+.sidebar
+    background-color: #0d47a1;
+    max-width: 3.75rem;
+    max-height: 100%;
+    display: block;
+    padding: 0.25rem, 0.25rem;
+    text-align: center;
+    align-content: center;
+.icon
+    font-size: 0.625rem;
+    color: #fff;
+    padding: 0.625rem 0.938rem;
+    cursor: pointer;
+.icon:active, .icon:hover
+    background-color: #0d3791;
+    border-radius: 0.625rem;
+.iconContainer
+    padding-top: 100%;
+    padding-bottom: 100%;
+span
+    margin: 0rem -0.938rem;
+.sticky
+    position: sticky;
+    flex-grow: 1;
+.ham
+    display: none;
+.menu
+    display: none;
+#toggle
+    display: none;
+@media only screen and (max-width: 46.875rem)
+    .iconContainer
+    display: none;
+    .sidebar
+        background-color: white;
+    .ham
+        display: block;
+    .menu
+        text-align: center;
+        display: none;
+    .menu a 
+        display: block;
+        border-bottom: 0.063rem solid #EAEAEB;
+        margin: 0 0.625rem;
+    #toggle:checked + .menu 
+        display: block;
+        margin-top: 10px;
+    .icons
+        font-size: 0.625rem;
+        color: blue;
+        padding: 0.625rem 0.938rem;
+        cursor: pointer;
+    .icons:hover
+        background-color: aqua;
+        border-radius: 0.625rem;

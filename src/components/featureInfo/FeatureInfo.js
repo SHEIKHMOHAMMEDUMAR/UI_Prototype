@@ -1,4 +1,4 @@
-import "./featureInfo.css"
+import "./featureinfo.css"
 import { React} from "react";
 import ContentLoader from "react-content-loader"
 

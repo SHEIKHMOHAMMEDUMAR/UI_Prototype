@@ -1,5 +1,5 @@
 import Home from "./pages/home/Home";
-import "./App.css";
+import "./app.css";
 import React from 'react'
 import {
   BrowserRouter,

@@ -1,26 +1,38 @@
-.transTable{
-    flex: 3;
-    border: 2px solid rgba(74, 74, 74, 0.37);
-    border-radius: 10px;
-    margin: 10px 10px;
-    cursor: pointer;
-    height: 700px;
+.transTable {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  border: 2px solid rgba(74, 74, 74, 0.37);
+  border-radius: 10px;
+  margin: 10px 10px;
+  cursor: pointer;
+  height: 700px;
 }
-.icon{
-    display: flex;
-    align-items: center;
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.approved{
-    color: green;
+
+.approved {
+  color: green;
 }
-.rejected{
-    color: red;
+
+.rejected {
+  color: red;
 }
-.pending_docs{
-    color: orange;
+
+.pending_docs {
+  color: orange;
 }
-@media (max-width: 750px){
-    .table{
-        display: none;
-    }
+
+@media (max-width: 750px) {
+  .table {
+    display: none;
+  }
 }
+/*# sourceMappingURL=transTable.css.map */

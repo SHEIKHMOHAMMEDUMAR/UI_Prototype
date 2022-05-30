@@ -1,4 +1,4 @@
-import "./advancedSearch.css"
+import "./advancedsearch.css"
 
 const AdvancedSearch = () => {
   return (

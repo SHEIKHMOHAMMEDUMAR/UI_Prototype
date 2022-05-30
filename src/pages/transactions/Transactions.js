@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import "./transactions.css"
+import "./transaction.css"
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 import SearchMenu from '../../components/searchMenu/SearchMenu';
