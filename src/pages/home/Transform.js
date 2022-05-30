@@ -335,9 +335,13 @@ export const Transform = (data, cond) => {
                 if((init_year - data[i].transaction.date.slice(0,4)) <= 1){
                     seg_data(data[i]);
                 }
+                else if(init_year - data[i].transaction.date.slice(0,4) === 1){
+                seg_data(data[i]);
+                count += 1;
+                }
             }
         }
-
-        return(userData);
-    }       
+        
+        return(userData);       
+    }
 }

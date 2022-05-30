@@ -16,6 +16,7 @@ export default function Home () {
   const [loading, setLoading] = useState(true);
   const [userData, setData] = useState([]);
   const [errr, setError] = useState(false);
+  const [errM, setErrM] = useState("");
 
   const updatedFilterData = (e) => {
     setData(Transform(apiData, e.target.value));  
@@ -33,13 +34,20 @@ export default function Home () {
     })
     .catch( err => {
       setError(true);
+      setErrM(err.message);
     });
   }, [loading]);
 
   return errr ? (
     <>
-      <div className="error">
-        Unable to connect to the server try after sometime.
+      <div>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+          <div className="error">
+            {errM}
+          </div>
+        </div>
       </div>
     </>
   ) : (

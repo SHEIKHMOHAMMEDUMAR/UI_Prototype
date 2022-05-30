@@ -43,7 +43,7 @@ export default function TransTable({items, isLoading}) {
      }
     }
     const cols = [
-      { field: "Transaction_ID", headerName: "Transaction ID", flex: 1, headerAlign: 'left', align: 'left'},
+      { field: "Transaction_ID", headerName: "Transaction ID", flex: 1, headerAlign: 'left', align: 'right'},
       { field: "LSP", headerName: "LSP", flex: 1 ,headerAlign: 'left', align: 'left'},
       { field: "applicant", headerName: "Applicant", flex: 1 ,headerAlign: 'left', align: 'left'},
       { field: "loan_type", headerName: "Loan type", flex: 1 ,headerAlign: 'left', align: 'left'},
