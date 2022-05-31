@@ -17,58 +17,35 @@ export const Transform = (data, cond) => {
         let index = 0;
         let lspname = [];
 
-        userData.featureInfo[0] = { title : "Total Applications" };
-        userData.featureInfo[1] = { title : "Total Disbursed" };
-        userData.featureInfo[2] = { title : "Total Rejected" };
-
-        userData.featureInfo[0].data = data.length;
-        userData.featureInfo[1].data = 0;
-        userData.featureInfo[2].data = 0;
-
-        userData.charts[0] = { title : "Pending Documentation" };
-        userData.charts[1] = { title : "Pending Offer Acceptance" };
-        userData.charts[2] = { title : "Pending Disbursment" };
-        userData.charts[3] = { title : "Failed Transaction" };
-
-        userData.charts[0].data = 0;
-        userData.charts[1].data = 0;
-        userData.charts[2].data = 0;
-        userData.charts[3].data = 0;
-
-        userData.charts[0].type = "Bar"; 
-        userData.charts[1].type = "Area"; 
-        userData.charts[2].type = "Bar"; 
-        userData.charts[3].type = "Area";
-
-        userData.charts[0].color = "#78efff"; 
-        userData.charts[1].color = "#fc7d5d"; 
-        userData.charts[2].color = "#4c75fc"; 
-        userData.charts[3].color = "#b326ff";
-
-        userData.charts[0].chartData = [];
-        userData.charts[1].chartData = [];
-        userData.charts[2].chartData = [];
-        userData.charts[3].chartData = [];
-
-        const seg_charts = (ind) => {
-            userData.charts[ind].chartData[0] = { name: 'Jan', "Active User": 0 };
-            userData.charts[ind].chartData[1] = { name: 'Feb', "Active User": 0 };
-            userData.charts[ind].chartData[2] = { name: 'Mar', "Active User": 0 };
-            userData.charts[ind].chartData[3] = { name: 'Apr', "Active User": 0 };
-            userData.charts[ind].chartData[4] = { name: 'May', "Active User": 0 };
-            userData.charts[ind].chartData[5] = { name: 'Jun', "Active User": 0 };
-            userData.charts[ind].chartData[6] = { name: 'Jul', "Active User": 0 };
-            userData.charts[ind].chartData[7] = { name: 'Aug', "Active User": 0 };
-            userData.charts[ind].chartData[8] = { name: 'Sep', "Active User": 0 };
-            userData.charts[ind].chartData[9] = { name: 'Oct', "Active User": 0 };
-            userData.charts[ind].chartData[10] = { name: 'Nov', "Active User": 0 };
-            userData.charts[ind].chartData[11] = { name: 'Dec', "Active User": 0 };
+        const f_title = [ "Total Applications", "Total Disbursed", "Total Rejected" ];
+        const f_data = [ data.length, 0, 0 ];
+        for( let i = 0 ; i < 3 ; i++ ){
+            userData.featureInfo[i] = { title : f_title[i] };
+            userData.featureInfo[i].data = f_data[i];
         }
 
-        seg_charts(0);
-        seg_charts(1);
-        seg_charts(2);
-        seg_charts(3);
+        const c_title = [ "Pending Documentation", "Pending Offer Acceptance", "Pending Disbursment", "Failed Transaction" ];
+        const c_type = [ "Bar", "Area" ];
+        const c_color = [ "#78efff", "#fc7d5d", "#4c75fc", "#b326ff" ];
+
+        for( let i = 0; i < 4; i++ ){
+            userData.charts[i] = { title : c_title[i] };
+            userData.charts[i].data = 0;
+            userData.charts[i].type = c_type[i%2];
+            userData.charts[i].color = c_color[i]; 
+            userData.charts[i].chartData = [];
+        }
+
+        const seg_charts = (ind) => {
+            const month = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
+            for( let i = 0 ; i < 12 ; i++ ){
+                userData.charts[ind].chartData[i] = { name: month[i], "Active User": 0 };
+            }
+        }
+
+        for( let i = 0; i < 4; i++ ){
+            seg_charts(i);
+        }
         
         userData.pieChart = { title : "LSP Disbursals / Lender" };
         userData.pieChart.data = 0;
@@ -77,159 +54,23 @@ export const Transform = (data, cond) => {
         const seg_data = (data_p) => {
             if(data_p.App_status === "Pending Documentation") {
                 userData.charts[0].data += 1; 
-                if(data_p.transaction.date.slice(5,7) === "01" ) {
-                    userData.charts[0].chartData[0]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "02" ) {
-                    userData.charts[0].chartData[1]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "03" ) {
-                    userData.charts[0].chartData[2]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "04" ) {
-                    userData.charts[0].chartData[3]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "05" ) {
-                    userData.charts[0].chartData[4]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "06" ) {
-                    userData.charts[0].chartData[5]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "07" ) {
-                    userData.charts[0].chartData[6]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "08" ) {
-                    userData.charts[0].chartData[7]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "09" ) {
-                    userData.charts[0].chartData[8]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "10" ) {
-                    userData.charts[0].chartData[9]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "11" ) {
-                    userData.charts[0].chartData[10]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "12" ) {
-                    userData.charts[0].chartData[11]["Active User"] += 1;
-                }
+                const a = parseInt(data_p.transaction.date.slice(5,7));
+                userData.charts[0].chartData[a-1]["Active User"] += 1;
             }
             else if(data_p.App_status === "Pending Offer Acceptance") {
                 userData.charts[1].data += 1;
-                if(data_p.transaction.date.slice(5,7) === "01" ) {
-                    userData.charts[1].chartData[0]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "02" ) {
-                    userData.charts[1].chartData[1]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "03" ) {
-                    userData.charts[1].chartData[2]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "04" ) {
-                    userData.charts[1].chartData[3]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "05" ) {
-                    userData.charts[1].chartData[4]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "06" ) {
-                    userData.charts[1].chartData[5]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "07" ) {
-                    userData.charts[1].chartData[6]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "08" ) {
-                    userData.charts[1].chartData[7]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "09" ) {
-                    userData.charts[1].chartData[8]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "10" ) {
-                    userData.charts[1].chartData[9]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "11" ) {
-                    userData.charts[1].chartData[10]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "12" ) {
-                    userData.charts[1].chartData[11]["Active User"] += 1;
-                } 
+                const a = parseInt(data_p.transaction.date.slice(5,7));
+                userData.charts[1].chartData[a-1]["Active User"] += 1; 
             }
             else if(data_p.App_status === "Pending disbursment") {
                 userData.charts[2].data += 1; 
-                if(data_p.transaction.date.slice(5,7) === "01" ) {
-                    userData.charts[2].chartData[0]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "02" ) {
-                    userData.charts[2].chartData[1]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "03" ) {
-                    userData.charts[2].chartData[2]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "04" ) {
-                    userData.charts[2].chartData[3]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "05" ) {
-                    userData.charts[2].chartData[4]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "06" ) {
-                    userData.charts[2].chartData[5]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "07" ) {
-                    userData.charts[2].chartData[6]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "08" ) {
-                    userData.charts[2].chartData[7]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "09" ) {
-                    userData.charts[2].chartData[8]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "10" ) {
-                    userData.charts[2].chartData[9]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "11" ) {
-                    userData.charts[2].chartData[10]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "12" ) {
-                    userData.charts[2].chartData[11]["Active User"] += 1;
-                }
+                const a = parseInt(data_p.transaction.date.slice(5,7));
+                userData.charts[2].chartData[a-1]["Active User"] += 1;
             }
             else if(data_p.App_status === "Failed Transaction") {
                 userData.charts[3].data += 1; 
-                if(data_p.transaction.date.slice(5,7) === "01" ) {
-                    userData.charts[3].chartData[0]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "02" ) {
-                    userData.charts[3].chartData[1]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "03" ) {
-                    userData.charts[3].chartData[2]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "04" ) {
-                    userData.charts[3].chartData[3]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "05" ) {
-                    userData.charts[3].chartData[4]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "06" ) {
-                    userData.charts[3].chartData[5]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "07" ) {
-                    userData.charts[3].chartData[6]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "08" ) {
-                    userData.charts[3].chartData[7]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "09" ) {
-                    userData.charts[3].chartData[8]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "10" ) {
-                    userData.charts[3].chartData[9]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "11" ) {
-                    userData.charts[3].chartData[10]["Active User"] += 1;
-                }
-                else if(data_p.transaction.date.slice(5,7) === "12" ) {
-                    userData.charts[3].chartData[11]["Active User"] += 1;
-                }
+                const a = parseInt(data_p.transaction.date.slice(5,7));
+                userData.charts[3].chartData[a-1]["Active User"] += 1;
             }
             else if(data_p.App_status === "Disbursed"){
                 userData.featureInfo[1].data += 1;
@@ -341,8 +182,7 @@ export const Transform = (data, cond) => {
                 count += 1;
                 }
             }
-        }
-        
+        }      
         return(userData);       
     }
 }
