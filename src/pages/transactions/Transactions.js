@@ -8,7 +8,7 @@ import TransTable from '../../components/transTable/TransTable';
 import axios from 'axios';
 
 export default function Transactions ()  {
-  const api_url = "http://localhost:3000/transactions";
+  const api_url = "https://fake-server-appp.herokuapp.com/transactions";
   const [tloading, setTloading] = useState(true);
   const [userTdata, setTdata] = useState([]);
   const [errt, seterrt] = useState(false);
