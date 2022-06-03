@@ -10,6 +10,7 @@ import Transactions from "./pages/transactions/Transactions";
 import Entites from "./pages/entites/Entites";
 import Health from "./pages/health/Health";
 import Settings from "./pages/settings/Settings";
+import NoMatch from "./components/noMatch/NoMatch";
 
 export default function App() {
   return (
@@ -17,11 +18,12 @@ export default function App() {
     <Routes>
       <Route path="/" >
         <Route index element={<Home/>} />
-        <Route path="dashboard" element={<Home/>} />
-        <Route path="transactions" element={<Transactions/>} />
-        <Route path="entites" element={<Entites/>} />
-        <Route path="health" element={<Health/>} />
-        <Route path="settings" element={<Settings/>} />
+        <Route exact path="dashboard" element={<Home/>} />
+        <Route exact path="transactions" element={<Transactions/>} />
+        <Route exact path="entites" element={<Entites/>} />
+        <Route exact path="health" element={<Health/>} />
+        <Route exact path="settings" element={<Settings/>} />
+        <Route path="*" element={<NoMatch/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

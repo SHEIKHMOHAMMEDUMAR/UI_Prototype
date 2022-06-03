@@ -2,6 +2,7 @@ import { React } from 'react';
 import "./settings.css"
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import UnderConstruct from '../../components/underConstruct/UnderConstruct';
 
 export default function Settings ()  {
   return (
@@ -11,7 +12,7 @@ export default function Settings ()  {
         <div className="container">
           <Sidebar />
           <div className="settings">
-            This page is under construction please visit after sometime.
+            <UnderConstruct/>
           </div>
         </div>
       </div>

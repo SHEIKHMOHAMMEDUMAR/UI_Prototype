@@ -2,7 +2,9 @@ import './searchMenu.css'
 import { Download, Search } from '@mui/icons-material';
 
 const SearchMenu = () => {
+    
   return (
+    <>
     <div className='searchMenu'>
         <div className='search'>
             <div className='localsearch'>
@@ -31,7 +33,7 @@ const SearchMenu = () => {
                 </select>
             </div>
             <div>
-                <a href=" " className="item advsearch">
+                <a href=" " className="item advsearch" >
                     <Search />
                     Advanced Search
                 </a>
@@ -44,6 +46,7 @@ const SearchMenu = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 export default SearchMenu;

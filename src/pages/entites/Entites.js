@@ -2,6 +2,7 @@ import { React } from 'react';
 import "./entites.css"
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import UnderConstruct from '../../components/underConstruct/UnderConstruct';
 
 export default function Entites ()  {
   return (
@@ -11,7 +12,7 @@ export default function Entites ()  {
         <div className="container">
           <Sidebar />
           <div className="entites">
-            This page is under construction please visit after sometime.
+            <UnderConstruct />
           </div>
         </div>
       </div>

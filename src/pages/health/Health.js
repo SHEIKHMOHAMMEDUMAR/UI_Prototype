@@ -2,6 +2,7 @@ import { React } from 'react';
 import "./health.css"
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import UnderConstruct from '../../components/underConstruct/UnderConstruct';
 
 export default function Health ()  {
   return (
@@ -11,7 +12,7 @@ export default function Health ()  {
         <div className="container">
           <Sidebar />
           <div className="health">
-            This page is under construction please visit after sometime.
+            <UnderConstruct />
           </div>
         </div>
       </div>

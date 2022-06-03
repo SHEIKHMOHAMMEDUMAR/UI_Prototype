@@ -24,7 +24,7 @@ export default function Home () {
   
   useEffect(() => {
     axios.get(api_url)
-    .then( res => {
+    .then(res=>{
       if(res.status === 200){
         setError(false);
         setApi(res.data);

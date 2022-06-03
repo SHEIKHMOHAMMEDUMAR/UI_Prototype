@@ -3,7 +3,8 @@ import { React} from "react";
 import ContentLoader from "react-content-loader"
 
 export default function FeatureInfo({items, isLoading}) {
-    return ( isLoading || items === undefined || items.length === 0 ) ? (
+    return ( isLoading || items === undefined || items.length === 0 ) ? 
+    (
         <div className="featured">
             <div className="featuredItem">
                 <div className="title">
@@ -14,14 +15,14 @@ export default function FeatureInfo({items, isLoading}) {
                 </div>   
             </div>
         </div> 
-        ) : 
-        ( 
-            <div className="featured">
-                {items.map((i)=>(
-                    <div className="featuredItem">
-                        <span className="featuredMoney">{i.data}</span>
-                        <span className="featuredTitle">{i.title}</span>
-                    </div>))}
-            </div> 
-        )
+    ) : 
+    ( 
+        <div className="featured">
+            {items.map((i)=>(
+                <div className="featuredItem">
+                    <span className="featuredMoney">{i.data}</span>
+                    <span className="featuredTitle">{i.title}</span>
+                </div>))}
+        </div> 
+    )
 }
