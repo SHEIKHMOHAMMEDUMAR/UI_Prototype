@@ -99,87 +99,59 @@ export const Transform = (data, cond) => {
             index += 1;
         } 
 
-        const date = data[data.length-1].transaction.date;
-        const init_day = date.slice(8,10);
-        const init_month = date.slice(5,7);
-        const init_year = date.slice(0,4);
-        let count = 0;
+        const date = new Date(data[data.length-1].transaction.date.split(" ")[0]);
 
         if(cond === "sevenDays"){
+            date.setDate(date.getUTCDate() - 7);
+            const lastDate = date.toLocaleString().split(",")[0];
             for(let i=data.length-1; i>=0; i--){
-                if(init_year - data[i].transaction.date.slice(0,4) === 0){
-                    if(init_month - data[i].transaction.date.slice(5,7) === 0){
-                        if(init_day - data[i].transaction.date.slice(8,10) <= 6){
-                            seg_data(data[i]);
-                            count += 1;
-                        }
-                    }
-                    else if(init_month - data[i].transaction.date.slice(5,7) === 1 && count < 7){
-                        seg_data(data[i]);
-                        count += 1;
-                    }
-                }
-                else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 7){
-                    seg_data(data[i]);
-                    count += 1;
+                seg_data(data[i]);
+                if(new Date(data[i].transaction.date.split(" ")[0]).toLocaleString().split(",")[0] === lastDate){   
+                    break;
                 }
             }
         }
 
         else if(cond === "oneMonth"){
+            date.setMonth(date.getUTCMonth() - 1);
+            const lastDate = date.toLocaleString().split(",")[0];
             for(let i=data.length-1; i>=0; i--){
-                if(init_year - data[i].transaction.date.slice(0,4) === 0){
-                    if(init_month - data[i].transaction.date.slice(5,7) <= 1){
-                        seg_data(data[i]);
-                        count += 1;
-                    }
-                }
-                else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 30){
-                    seg_data(data[i]);
-                    count += 1;
+                seg_data(data[i]);
+                if(new Date(data[i].transaction.date.split(" ")[0]).toLocaleString().split(",")[0] === lastDate){   
+                    break;
                 }
             }
         }
 
         else if(cond === "threeMonths"){
+            date.setMonth(date.getUTCMonth() - 3);
+            const lastDate = date.toLocaleString().split(",")[0];
             for(let i=data.length-1; i>=0; i--){
-                if(init_year - data[i].transaction.date.slice(0,4) === 0){
-                    if(init_month - data[i].transaction.date.slice(5,7) <= 3){
-                        seg_data(data[i]);
-                        count  += 1;
-                    }
-                }
-                else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 90){
-                    seg_data(data[i]);
-                    count += 1;
+                seg_data(data[i]);
+                if(new Date(data[i].transaction.date.split(" ")[0]).toLocaleString().split(",")[0] === lastDate){   
+                    break;
                 }
             }
         }
 
         else if(cond === "sixMonths"){
+            date.setMonth(date.getUTCMonth() - 6);
+            const lastDate = date.toLocaleString().split(",")[0];
             for(let i=data.length-1; i>=0; i--){
-                if(init_year - data[i].transaction.date.slice(0,4) === 0){
-                    if(init_month - data[i].transaction.date.slice(5,7) <= 6){
-                        seg_data(data[i]);
-                        count += 1;
-                    }
-                }
-                else if(init_year - data[i].transaction.date.slice(0,4) === 1 && count < 180){
-                    seg_data(data[i]);
-                    count += 1;
+                seg_data(data[i]);
+                if(new Date(data[i].transaction.date.split(" ")[0]).toLocaleString().split(",")[0] === lastDate){   
+                    break;
                 }
             }
         }
 
         else if(cond === "oneYear"){
+            date.setFullYear(date.getUTCFullYear() - 1);
+            const lastDate = date.toLocaleString().split(",")[0];
             for(let i=data.length-1; i>=0; i--){
-                if((init_year - data[i].transaction.date.slice(0,4)) <= 1){
-                    seg_data(data[i]);
-                    count += 1;
-                }
-                else if(init_year - data[i].transaction.date.slice(0,4) === 1){
                 seg_data(data[i]);
-                count += 1;
+                if(new Date(data[i].transaction.date.split(" ")[0]).toLocaleString().split(",")[0] === lastDate){   
+                    break;
                 }
             }
         }      
