@@ -10,15 +10,6 @@
     display: flex;
     align-items: center;
 }
-.approved{
-    color: green;
-}
-.rejected{
-    color: red;
-}
-.pending_docs{
-    color: orange;
-}
 @media (max-width: 750px){
     .table{
         display: none;

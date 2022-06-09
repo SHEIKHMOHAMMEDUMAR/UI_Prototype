@@ -18,7 +18,7 @@ export default function Home () {
   const [errr, setError] = useState(false);
   const [errM, setErrM] = useState("");
 
-  const updatedFilterData = (e) => {
+  const updatedFilterData = (e) => {    
     setData(Transform(apiData, e.target.value));  
   }
   
