@@ -118,7 +118,7 @@ export default function Transactions ()  {
                       <option value="12-15-2021 12-24-2021">Dec 15,2021 - Dec 24,2021</option> 
                       <option value="12-05-2021 12-14-2021">Dec 5,2021 - Dec 14,2021</option> 
                       <option value="11-25-2021 12-04-2021">Nov 25,2021 - Dec 4,2021</option>
-                      <option value="11-15-2021 12-24-2021">Nov 15,2021 - Nov 24,2021</option> 
+                      <option value="11-15-2021 11-24-2021">Nov 15,2021 - Nov 24,2021</option> 
                   </select>
                 </div>
                 <div>
