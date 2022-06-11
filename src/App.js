@@ -11,7 +11,7 @@ import Entites from "./pages/entites/Entites";
 import Health from "./pages/health/Health";
 import Settings from "./pages/settings/Settings";
 import NoMatch from "./components/noMatch/NoMatch";
-import Example from "./components/Example";
+import Practice from "./components/practice/Practice";
 
 export default function App() {
   return (
@@ -24,7 +24,7 @@ export default function App() {
         <Route exact path="entites" element={<Entites/>} />
         <Route exact path="health" element={<Health/>} />
         <Route exact path="settings" element={<Settings/>} />
-        <Route exact path="practice" element={<Example/>} />
+        <Route exact path="practice" element={<Practice/> } />
         <Route path="*" element={<NoMatch/>}/>
       </Route>
     </Routes>
