@@ -61,7 +61,7 @@ const AdvancedSearch = () => {
                 </div>
             </div>
             <div className="component c">
-                <div>
+                <div className="hide">
                     <a href=" " className="link">Hide</a>
                     <a href=" " className="link">Clear All</a>
                 </div>

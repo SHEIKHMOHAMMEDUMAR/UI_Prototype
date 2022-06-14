@@ -14,10 +14,10 @@ export default function Practice () {
           Task Completed
         </div>
         <div>
-          This page help to undersatnd the dynamic nature of menubar / navbar.
+          This page help to understand the dynamic nature of menubar / navbar.
         </div>
         <div>
-          <Link to="/dashboard" style={{ fontWeight: "bold" }}>Go back, </Link> or head over to <Link to="/" style={{ fontWeight: "bold" }} >Perfios.com</Link> to choose  new direction.
+          <Link to="/dashboard" style={{ fontWeight: "bold" }}>Go back, </Link> or head over to <Link to="/" style={{ fontWeight: "bold" }} >Perfios.com</Link> to choose new direction.
         </div>
       </div>        
     </div>

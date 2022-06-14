@@ -17,3 +17,8 @@
 .userName:hover{
     color: #fff;
 }
+@media (max-width: 750px){
+    .userName{
+        display: none;
+    }
+}

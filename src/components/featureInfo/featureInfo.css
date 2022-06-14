@@ -22,7 +22,26 @@
 .featuredItem:hover{
     background-color: rgb(243, 240, 240);
 }
-@media (max-width: 750px){
+@media (max-width: 400px){
+    .featuredItem{
+        border: 1px solid rgba(74, 74, 74, 0.37);
+        display: flex;
+    }
+    .featured{
+        display:inline-block;
+        
+    }
+    .featuredTitle{
+        text-align: right;
+        font-size: 20px;
+    }
+    .featuredMoney{
+        text-align: left;
+        font-size: 25px;
+    }
+
+}
+@media only screen and (min-width:401px) and (max-width:750px){
     .featuredItem{
         border: 1px solid rgba(74, 74, 74, 0.37);
         display: flex;

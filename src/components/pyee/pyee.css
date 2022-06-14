@@ -20,12 +20,12 @@
 }
 @media (max-width: 750px){
     .piechart{
-        border: 1px solid rgba(74, 74, 74, 0.37);
-        height: 100%;
-        margin-top: 20px;
+        border: 0px;
         margin-left: -10px;
+        line-height: 30px;
     }
     .title_p{
         align-items: center;
+        margin-left: 50px;
     }
 }

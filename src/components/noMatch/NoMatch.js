@@ -17,7 +17,7 @@ export default function NoMatch () {
           The Page you are looking for doesn't exist or an other error occured.
         </div>
         <div>
-          <Link to="/dashboard" style={{ fontWeight: "bold" }}>Go back, </Link> or head over to <Link to="/" style={{ fontWeight: "bold" }} >Perfios.com</Link> to choose  new direction.
+          <Link to="/dashboard" style={{ fontWeight: "bold" }}>Go back, </Link> or head over to <Link to="/" style={{ fontWeight: "bold" }} >Perfios.com</Link> to choose new direction.
         </div>
       </div>        
     </div>

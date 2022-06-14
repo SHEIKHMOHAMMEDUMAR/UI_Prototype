@@ -27,7 +27,21 @@
 .chart:hover{
     background-color: rgb(243, 240, 240);
 }
-@media (max-width: 750px){
+@media (max-width:400px){
+    .charts{
+        display: block;
+        width: fit-content;
+    }
+    .data_c{
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    .title_c{
+        margin-right: 10px;
+    }
+
+}
+@media only screen and (min-width:401px) and (max-width:750px){
     .charts{
         display: block;
         width: fit-content;

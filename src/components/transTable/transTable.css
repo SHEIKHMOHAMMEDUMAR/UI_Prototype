@@ -11,7 +11,7 @@
     align-items: center;
 }
 @media (max-width: 750px){
-    .table{
+    .transTable{
         display: none;
     }
 }

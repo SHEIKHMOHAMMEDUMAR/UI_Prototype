@@ -3,9 +3,6 @@
     background-color: rgb(243, 244, 253);
     font-size: 14px;
 }
-.wrapper{
-    flex: 3;
-}
 .component{
     display: flex;
     align-items: center;
@@ -45,4 +42,15 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
+}
+@media (max-width : 750px){
+    .component{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hide{
+        display: none;
+    }
+
 }

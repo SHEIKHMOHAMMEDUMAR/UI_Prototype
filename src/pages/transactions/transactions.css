@@ -72,3 +72,8 @@ a{
 .dis{
   display: flex;
 }
+@media (max-width : 750px){
+    .items{
+        display: none;
+    }
+}

@@ -52,7 +52,7 @@ export default function TransTable({items, isLoading}) {
               columns={cols}
               autoPageSize={true}
               rowsPerPageOptions={[10]}
-              components={{ Toolbar: GridToolbar }}
+              //components={{ Toolbar: GridToolbar }}
               checkboxSelection
               pagination/>
           </div>
