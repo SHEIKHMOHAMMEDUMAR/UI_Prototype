@@ -1,14 +1,22 @@
-.icon_wrap{
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
+.icon_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
 }
-.approved{
-    color: green;
+
+.approved {
+  color: green;
 }
-.rejected{
-    color: red;
+
+.rejected {
+  color: red;
 }
-.pending_docs{
-    color: orange;
+
+.pending_docs {
+  color: orange;
 }
+/*# sourceMappingURL=iconCon.css.map */

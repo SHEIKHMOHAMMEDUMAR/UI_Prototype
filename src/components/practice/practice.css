@@ -1,21 +1,27 @@
-.practice{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 236, 236);
-    color: red;
-    position: absolute;
-    display: flex;
-    text-align: center;
+.practice {
+  width: 100%;
+  height: 100%;
+  background-color: #ffecec;
+  color: red;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
 }
-.wrapperp{
-    margin: auto;
+
+.wrapperp {
+  margin: auto;
 }
-.errorp{
-    font-size: 40px;
-    font-weight: bold;
-    margin: auto;
+
+.errorp {
+  font-size: 40px;
+  font-weight: bold;
+  margin: auto;
 }
-.errorDp{
-    font-size: 25px;
-    margin: auto;
+
+.errorDp {
+  font-size: 25px;
+  margin: auto;
 }
+/*# sourceMappingURL=practice.css.map */

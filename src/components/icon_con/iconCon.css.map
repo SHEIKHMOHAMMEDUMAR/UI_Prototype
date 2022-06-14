@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,IAAI;CAAG;;AAC1B,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,KAAK;CAAG;;AACnB,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,GAAG;CAAG;;AACjB,AAAA,aAAa,CAAC;EACV,KAAK,EAAE,MAAM;CAAG",
+    "sources": [
+        "iconCon.sass"
+    ],
+    "names": [],
+    "file": "iconCon.css"
+}

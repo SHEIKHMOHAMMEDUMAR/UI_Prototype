@@ -1,0 +1,56 @@
+.sidebar
+    background-color: #0d47a1;
+    max-width: 60px;
+    max-height: 100%;
+    position: relative;
+    display: block;
+    padding: 4px 4px;
+    text-align: center;
+    align-content: center;
+.icon
+    font-size: 10px;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+.icon:active, .icon:hover
+    background-color: #0d3791;
+    border-radius: 10px;
+.iconContainer
+    padding-top: 100%;
+    padding-bottom: 100%;
+span
+    margin: 0px -15px;
+.sticky
+    position: sticky;
+    flex-grow: 1;
+.ham
+    display: none;
+.menu
+    display: none;
+#toggle
+    display: none;
+@media only screen and (max-width: 750px)
+    .iconContainer
+        display: none;
+    .sidebar
+        background-color: white;
+    .ham
+        display: block;
+    .menu
+        text-align: center;
+        display: none;
+    .menu a 
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0 10px;
+    #toggle:checked + .menu 
+        display: block;
+        margin-top: 10px;
+    .icons
+        font-size: 10px;
+        color: blue;
+        padding: 10px 15px;
+        cursor: pointer;
+    .icons:hover
+        background-color: aqua;
+        border-radius: 10px;

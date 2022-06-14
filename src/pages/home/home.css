@@ -1,18 +1,29 @@
 .container {
-    display: flex;
-    width: 100%;
-  }
-.home{
-    flex: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
-.homeWidgets{
-    display: flex;
+
+.home {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
 }
-.drop{
-    margin: 10px 10px;
-    margin-left: 15px;
+
+.homeWidgets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.filter{
-    border: 0.5px solid #0d47a1;
-    border-radius: 5px;
+
+.drop {
+  margin: 10px 10px;
+  margin-left: 15px;
 }
+
+.filter {
+  border: 0.5px solid #0d47a1;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=home.css.map */

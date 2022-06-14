@@ -1,28 +1,37 @@
-.table{
-    flex: 3;
-    border: 2px solid rgba(74, 74, 74, 0.37);
-    border-radius: 10px;
-    margin: 10px 10px;
-    cursor: pointer;
-    height: 700px;
+.table {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  border: 2px solid rgba(74, 74, 74, 0.37);
+  border-radius: 10px;
+  margin: 10px 10px;
+  cursor: pointer;
+  height: 700px;
 }
-.status{
-    margin: 10px;
+
+.status {
+  margin: 10px;
 }
-.status{
-    margin: 10px;
+
+.status {
+  margin: 10px;
 }
-.logo{
-    margin: 10px;
+
+.logo {
+  margin: 10px;
 }
-.Approved{
-    color: green;
+
+.Approved {
+  color: green;
 }
-.Declined{
-    color: red;
+
+.Declined {
+  color: red;
 }
-@media (max-width: 750px){
-    .table{
-        display: none;
-    }
+
+@media (max-width: 750px) {
+  .table {
+    display: none;
+  }
 }
+/*# sourceMappingURL=lsp.css.map */

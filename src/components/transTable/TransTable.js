@@ -1,6 +1,6 @@
 import "./transTable.css"
 import ContentLoader from "react-content-loader"
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { IconCon } from "../icon_con/IconCon";
 
 export default function TransTable({items, isLoading}) { 

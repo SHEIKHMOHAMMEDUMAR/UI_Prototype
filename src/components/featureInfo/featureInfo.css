@@ -1,62 +1,73 @@
-.featured{
-    max-width: 100%;
+.featured {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.featuredItem {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 2px solid rgba(74, 74, 74, 0.37);
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.featuredTitle {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.featuredMoney {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.featuredItem:hover {
+  background-color: #f3f0f0;
+}
+
+@media (max-width: 400px) {
+  .featuredItem {
+    border: 1px solid rgba(74, 74, 74, 0.37);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-}
-.featuredItem{
-    flex: 1;
-    border: 2px solid rgba(74, 74, 74, 0.37);
-    margin: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: block;
-    text-align: center;
-}
-.featuredTitle{
+  }
+  .featured {
+    display: inline-block;
+  }
+  .featuredTitle {
+    text-align: right;
+    font-size: 20px;
+  }
+  .featuredMoney {
+    text-align: left;
     font-size: 25px;
-    margin: 10px;
+  }
 }
-.featuredMoney{
-    font-size: 40px;
-    margin: 10px;
-}
-.featuredItem:hover{
-    background-color: rgb(243, 240, 240);
-}
-@media (max-width: 400px){
-    .featuredItem{
-        border: 1px solid rgba(74, 74, 74, 0.37);
-        display: flex;
-    }
-    .featured{
-        display:inline-block;
-        
-    }
-    .featuredTitle{
-        text-align: right;
-        font-size: 20px;
-    }
-    .featuredMoney{
-        text-align: left;
-        font-size: 25px;
-    }
 
+@media only screen and (min-width: 401px) and (max-width: 750px) {
+  .featuredItem {
+    border: 1px solid rgba(74, 74, 74, 0.37);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .featured {
+    display: inline-block;
+  }
+  .featuredTitle {
+    text-align: right;
+    font-size: 25px;
+  }
+  .featuredMoney {
+    text-align: left;
+    font-size: 30px;
+  }
 }
-@media only screen and (min-width:401px) and (max-width:750px){
-    .featuredItem{
-        border: 1px solid rgba(74, 74, 74, 0.37);
-        display: flex;
-    }
-    .featured{
-        display:inline-block;
-        
-    }
-    .featuredTitle{
-        text-align: right;
-        font-size: 25px;
-    }
-    .featuredMoney{
-        text-align: left;
-        font-size: 30px;
-    }
-
-}
+/*# sourceMappingURL=featureinfo.css.map */
