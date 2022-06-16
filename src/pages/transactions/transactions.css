@@ -129,7 +129,20 @@ a {
 }
 
 @media (max-width: 750px) {
-  .items {
+  .searchMenu {
+    display: block;
+  }
+  .item.drop {
+    display: block;
+    margin-left: -10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .item.advsearch {
+    display: none;
+  }
+  .item.download {
     display: none;
   }
 }

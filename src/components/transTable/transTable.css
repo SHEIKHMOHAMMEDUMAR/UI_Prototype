@@ -20,7 +20,7 @@
 
 @media (max-width: 750px) {
   .transTable {
-    display: none;
+    display: block;
   }
 }
 /*# sourceMappingURL=transTable.css.map */
