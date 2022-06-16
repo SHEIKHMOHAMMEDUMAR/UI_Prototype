@@ -1,0 +1,97 @@
+.dcontainer{
+    display: flex;
+}
+.detailed{
+    flex: 7;
+}
+.bart{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgb(241, 240, 240);
+    justify-content: space-between;
+    color: rgb(68, 68, 68);
+    padding: 5px;
+    font-weight: 500;
+}
+.stext{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+    font-size: 17px;
+}
+.sicons{
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    color: rgb(129, 129, 129);
+}
+.sbar{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 30px 15px;
+    font-size: 20px;
+    justify-content: space-between;
+}
+.dele{
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+}
+.transD{
+    flex: 2;
+    margin: 10px;
+    font-size: 20px;
+    display: flex;
+}
+.trans{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-weight: 600;
+}
+.contD{
+    margin-left: 40px;
+}
+.ra{
+    display: flex;
+    align-items: center;
+    margin: 0px 90px;
+    text-align: center;
+    margin: 10px;
+    font-weight: 400;
+}
+.userInfo{
+    display: flex;
+    align-items: center;
+    color: #1f5bb5;
+    font-size: 40px;
+    margin: 15px;
+    font-weight: 600;
+}
+.uwrapper{
+  border: 2px solid rgba(74, 74, 74, 0.37);
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.userI{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-weight: 600;
+}
+.ua{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin: 10px;
+}
+.ucontD{
+    margin-left: 40px; 
+}

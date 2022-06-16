@@ -12,6 +12,7 @@ import Health from "./pages/health/Health";
 import Settings from "./pages/settings/Settings";
 import NoMatch from "./components/noMatch/NoMatch";
 import Practice from "./components/practice/Practice";
+import Detailed from "./pages/detailed/Detailed";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route exact path="health" element={<Health/>} />
         <Route exact path="settings" element={<Settings/>} />
         <Route exact path="practice" element={<Practice/> } />
+        <Route exact path="detailed" element={<Detailed />} />
         <Route path="*" element={<NoMatch/>}/>
       </Route>
     </Routes>
