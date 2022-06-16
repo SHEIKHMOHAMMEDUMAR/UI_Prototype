@@ -12,6 +12,6 @@ export const menuItems = [
     { name: "Transactions", icon: LabelImportant, link: "/transactions"},
     { name: "Entites", icon: Widgets, link: "/entites"},
     { name: "Health", icon: Speed, link: "/health"},
-    { name: "Settigs", icon: Settings, link: "/settings"},
+    { name: "Settings", icon: Settings, link: "/settings"},
     //{ name: "Practice", icon: BugReport, link: "/practice"},
 ];

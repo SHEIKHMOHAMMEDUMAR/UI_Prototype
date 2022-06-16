@@ -1,6 +1,6 @@
 import "./transTable.css"
 import ContentLoader from "react-content-loader"
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { IconCon } from "../icon_con/IconCon";
 
 export default function TransTable({items, isLoading}) { 
@@ -52,7 +52,7 @@ export default function TransTable({items, isLoading}) {
               columns={cols}
               autoPageSize={true}
               rowsPerPageOptions={[10]}
-              //components={{ Toolbar: GridToolbar }}
+              components={{ Toolbar: GridToolbar }}
               checkboxSelection
               pagination/>
           </div>
