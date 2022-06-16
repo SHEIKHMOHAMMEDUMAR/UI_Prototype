@@ -1,0 +1,28 @@
+.iconzz{
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    padding: 10px;
+}
+.iconzz.accept{
+    display: flex;
+    align-items: center;
+    background-color: rgb(205, 227, 205);
+}
+.iconzz.pend{
+    display: flex;
+    align-items: center;
+    background-color: rgb(247, 222, 176);
+}
+.iconzz.undef{
+    display: flex;
+    align-items: center;
+    background-color: rgb(225, 221, 221);
+}
+.iconzz.reje{
+    display: flex;
+    align-items: center;
+    background-color: rgb(246, 184, 184);
+}

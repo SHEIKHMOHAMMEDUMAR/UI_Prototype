@@ -2,8 +2,10 @@ import "./transTable.css"
 import ContentLoader from "react-content-loader"
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { IconCon } from "../icon_con/IconCon";
+import { useNavigate } from "react-router-dom";
 
 export default function TransTable({items, isLoading}) { 
+  let navigate = useNavigate();
   if( isLoading || items === undefined || items.length === 0 ) {
     return (
       <div className="table">
@@ -15,6 +17,7 @@ export default function TransTable({items, isLoading}) {
       </div>
     )
   } 
+
   else {
     const cols = [
       { field: "Transaction_ID", headerName: "Transaction ID", flex: 1, headerAlign: 'left', align: 'right'},
@@ -33,6 +36,7 @@ export default function TransTable({items, isLoading}) {
         } 
       }
     ];
+
       const rows = items.map((i) => {
         return {
           id: i.Transaction_ID,
@@ -45,6 +49,7 @@ export default function TransTable({items, isLoading}) {
           Status: i.Status,
         };
       });
+
       return (
           <div className="transTable">
             <DataGrid
@@ -54,6 +59,9 @@ export default function TransTable({items, isLoading}) {
               rowsPerPageOptions={[10]}
               components={{ Toolbar: GridToolbar }}
               checkboxSelection
+              onRowClick={(event, rowData) => {
+                navigate("/detailed", {state: {id: event.row.Transaction_ID}});
+              }}
               pagination/>
           </div>
       ) 
