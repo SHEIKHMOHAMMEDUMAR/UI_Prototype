@@ -3,7 +3,7 @@ import "./transactions.css"
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 //import SearchMenu from '../../components/searchMenu/SearchMenu';
-import AdvancedSearch from '../../components/advancedSearch/AdvancedSearch';
+//import AdvancedSearch from '../../components/advancedSearch/AdvancedSearch';
 import TransTable from '../../components/transTable/TransTable';
 import axios from 'axios';
 import { Download, Search } from '@mui/icons-material';
@@ -122,21 +122,12 @@ export default function Transactions ()  {
                   </select>
                 </div>
                 <div>
-                    <a href=" " className="item advsearch">
-                        <Search />
-                        Advanced Search
-                    </a>
-                </div>
-                <div>
                     <a href=" " className="item download">
                         <Download />
                         Download
                     </a>
                 </div>
               </div>
-            </div>
-            <div className="advSearched">
-              <AdvancedSearch />
             </div>
             <TransTable items={userTdata} isLoading={tloading}/>
           </div>

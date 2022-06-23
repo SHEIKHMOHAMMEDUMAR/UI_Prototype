@@ -20,7 +20,17 @@ export default function TransTable({items, isLoading}) {
 
   else {
     const cols = [
-      { field: "Transaction_ID", headerName: "Transaction ID", flex: 1, headerAlign: 'left', align: 'right'},
+      { field: "Transaction_ID", headerName: "Transaction ID", flex: 1, headerAlign: 'left', align: 'left',
+        renderCell: (params) => {
+          const val = params.row.Transaction_ID.slice(0,5) + "..." + params.row.Transaction_ID.slice(25,);
+          return(
+            <>
+            <div className="transRow">
+              {val}
+            </div>
+            </>
+          )
+        }},
       { field: "LSP", headerName: "LSP", flex: 1 ,headerAlign: 'left', align: 'left'},
       { field: "applicant", headerName: "Applicant", flex: 1 ,headerAlign: 'left', align: 'left'},
       { field: "loan_type", headerName: "Loan type", flex: 1 ,headerAlign: 'left', align: 'left'},
@@ -59,7 +69,7 @@ export default function TransTable({items, isLoading}) {
               rowsPerPageOptions={[10]}
               components={{ Toolbar: GridToolbar }}
               checkboxSelection
-              onRowClick={(event, rowData) => {
+              onCellClick={(event, rowData) => {
                 navigate("/detailed", {state: {id: event.row.Transaction_ID}});
               }}
               pagination/>

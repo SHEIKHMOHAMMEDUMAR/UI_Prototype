@@ -7,6 +7,7 @@ import { ArrowForwardIos, Clear, ContentCopy, Done, Person, PriorityHigh, Settin
 import Delements from '../../components/delements/Delements';
 import { useLocation } from "react-router-dom";
 import ContentLoader from "react-content-loader";
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 export default function Detailed ()  { 
   
@@ -164,8 +165,20 @@ export default function Detailed ()  {
                 <div className='trans'> Transaction Status </div>
               </div>
               <div className='contD'>
-                <div className='ra'> {userDdata[0].Transaction_ID} <ContentCopy style={{ color: "#71700", marginLeft: "20px", cursor: "pointer" }} /> </div>
-                <div className='ra'> {userDdata[0].Client_ID} <ContentCopy style={{ color: "#71700", marginLeft: "20px", cursor: "pointer" }} /> </div>
+                <div className='ra'> {userDdata[0].Transaction_ID} 
+                  <CopyToClipboard text={userDdata[0].Transaction_ID}>
+                    <div className='copy'>
+                      <ContentCopy  style={{ marginLeft: "20px", cursor: "pointer"}}/>
+                    </div>
+                  </CopyToClipboard>
+                </div>
+                <div className='ra'> {userDdata[0].Client_ID} 
+                  <CopyToClipboard text={userDdata[0].Client_ID}>
+                    <div className='copy'>
+                      <ContentCopy  style={{ marginLeft: "20px", cursor: "pointer"}}/>
+                    </div>
+                  </CopyToClipboard> 
+                </div>
                 <div className='ra'> {userDdata[0].lsp} </div>
                 <div className='ra'> {userDdata[0].loan_profile} </div>
                 <div className='ra'> {DStatus(userDdata[0].Status)} </div>
@@ -184,7 +197,13 @@ export default function Detailed ()  {
                 <div className='userI'> Remote Address </div>
               </div>
               <div className='ucontD'>
-                <div className='ua'>{userDdata[0].userInfo.user_ID} <ContentCopy style={{ color: "#71700", marginLeft: "20px", cursor: "pointer" }} /> </div> 
+                <div className='ua'>{userDdata[0].userInfo.user_ID} 
+                  <CopyToClipboard text={userDdata[0].userInfo.user_ID}>
+                    <div className='copy'>
+                      <ContentCopy  style={{ marginLeft: "20px", cursor: "pointer"}}/>
+                    </div>
+                  </CopyToClipboard>
+                </div> 
                 <div className='ua'>{userDdata[0].userInfo.userName} </div> 
                 <div className='ua'>{userDdata[0].userInfo.category} </div> 
                 <div className='ua'>{userDdata[0].userInfo.mobile} </div> 
