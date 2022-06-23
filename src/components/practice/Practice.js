@@ -1,8 +1,12 @@
 import "./practice.css"
 import { Link } from "react-router-dom";
 import { Biotech } from "@mui/icons-material"
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 export default function Practice () {
+  const copyTo = () => {
+    <CopyToClipboard text={document.getElementById('errorDp').getAttribute('value')}/>
+  }
   return (
     <div className="practice">
       <div className="wrapperp">
@@ -10,7 +14,7 @@ export default function Practice () {
         <div className="errorp">
           Testing
         </div>
-        <div className="errorDp">
+        <div className="errorDp" onClick={copyTo} style={{cursor: "pointer"}}>
           Task Completed
         </div>
         <div>

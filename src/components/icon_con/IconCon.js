@@ -7,7 +7,7 @@ export const IconCon = ({value}) => {
         return (
             <>
                 <div className='icon_wrap'>
-                    <CheckCircle className="approved" />
+                    <CheckCircle className="approved" style={{marginRight: "10px"}} />
                     {value}
                 </div>
             </>
@@ -17,7 +17,7 @@ export const IconCon = ({value}) => {
         return (
             <>
                 <div className='icon_wrap'>
-                    <Cancel className="rejected" />
+                    <Cancel className="rejected" style={{marginRight: "10px"}} />
                     {value}
                 </div>
             </>
@@ -27,7 +27,7 @@ export const IconCon = ({value}) => {
         return (
             <>
                 <div className='icon_wrap'>
-                    <Error className="pending_docs" />
+                    <Error className="pending_docs" style={{marginRight: "10px"}} />
                     {value}
                 </div>
             </>

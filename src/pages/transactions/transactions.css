@@ -112,22 +112,14 @@ a {
   text-decoration: none;
 }
 
-.advancedsearch {
+.advancedsearch{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
-.noDis {
+.advSearched{
   display: none;
 }
-
-.dis {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 @media (max-width: 750px) {
   .searchMenu {
     display: block;

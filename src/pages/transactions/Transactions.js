@@ -15,7 +15,7 @@ export default function Transactions ()  {
   const [errt, seterrt] = useState(false);
   const [errM, seterrM] = useState("");
   const [change, setChange] = useState("");
-  
+
   useEffect(() => {
     axios.get(api_url)
     .then( res => {
@@ -122,7 +122,7 @@ export default function Transactions ()  {
                   </select>
                 </div>
                 <div>
-                    <a href=" " className="item advsearch" >
+                    <a href=" " className="item advsearch">
                         <Search />
                         Advanced Search
                     </a>
@@ -135,7 +135,7 @@ export default function Transactions ()  {
                 </div>
               </div>
             </div>
-            <div >
+            <div className="advSearched">
               <AdvancedSearch />
             </div>
             <TransTable items={userTdata} isLoading={tloading}/>
