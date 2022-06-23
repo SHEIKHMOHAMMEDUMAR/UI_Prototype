@@ -69,7 +69,7 @@ export default function TransTable({items, isLoading}) {
               rowsPerPageOptions={[10]}
               components={{ Toolbar: GridToolbar }}
               checkboxSelection
-              onCellClick={(event, rowData) => {
+              onRowClick={(event, rowData) => {
                 navigate("/detailed", {state: {id: event.row.Transaction_ID}});
               }}
               pagination/>
