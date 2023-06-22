@@ -11,7 +11,7 @@ import Sidebar from '../../components/sidebar/Sidebar';
 
 export default function Home () {
 
-  const api_url = "https://api-databases.herokuapp.com/application";
+  const api_url = "https://api-databases.vercel.app/application";
   const [apiData, setApi] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userData, setData] = useState([]);

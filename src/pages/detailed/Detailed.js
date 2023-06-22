@@ -12,7 +12,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 export default function Detailed ()  { 
   
   const location = useLocation();
-  const api_url = "https://api-databases.herokuapp.com/detailed";
+  const api_url = "https://api-databases.vercel.app/detailed";
   const [dloading, setDloading] = useState(true);
   const [userDdata, setDdata] = useState([]);
   const [errd, seterrd] = useState(false);

@@ -1,5 +1,5 @@
 import {
-  //BugReport,
+  BugReport,
   Dashboard,
   LabelImportant,
   Settings,
@@ -13,5 +13,5 @@ export const menuItems = [
     { name: "Entites", icon: Widgets, link: "/entites"},
     { name: "Health", icon: Speed, link: "/health"},
     { name: "Settings", icon: Settings, link: "/settings"},
-    //{ name: "Practice", icon: BugReport, link: "/practice"},
+    { name: "Practice", icon: BugReport, link: "/practice"},
 ];

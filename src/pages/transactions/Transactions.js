@@ -9,7 +9,7 @@ import axios from 'axios';
 import { Download, Search } from '@mui/icons-material';
 
 export default function Transactions ()  {
-  const api_url = "https://api-databases.herokuapp.com/transactions";
+  const api_url = "https://api-databases.vercel.app/transactions";
   const [tloading, setTloading] = useState(true);
   const [userTdata, setTdata] = useState([]);
   const [errt, seterrt] = useState(false);
